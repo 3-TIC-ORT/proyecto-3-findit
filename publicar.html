@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Publicar un objeto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 300px;
+    border-radius: 10px;
+    }   
+    button {
+            display: block;
+            margin: 20px auto; 
+            padding: 15px; 
+            width: 150px;  
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 40px;
+    }
+    </style>
+    
+    <a href="index.html">FindIT</a>
+    <h2>Publicar Objeto Encontrado</h2>
+    <div class="inputs">
+    <input type="text" id="nombreObjeto" placeholder="Nombre del objeto">
+    <input type="text" id="caracteristicas" placeholder="Características">
+    <input type="text" id="lugarEncontrado" placeholder="Lugar encontrado">
+    <input type="text" id="lugarDejado" placeholder="Lugar dejado">
+    <button onclick="publicarObjeto()">Publicar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
