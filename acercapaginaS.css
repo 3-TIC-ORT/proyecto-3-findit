@@ -1,3 +1,22 @@
 h1 {
 color:#195789;
+text-align: center;
+align-self: auto;
+}
+
+h2 {
+text-align: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    align-self: center;
+    -ms-flex-align: center;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
 }
