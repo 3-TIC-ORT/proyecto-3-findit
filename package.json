@@ -1,0 +1,15 @@
+{
+  "name": "findit",
+  "version": "1.0.0",
+  "description": "Aplicación para publicar y buscar objetos perdidos.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
