@@ -34,7 +34,7 @@ const server = http.createServer(async (req, res) => {
                 await writeFile(dataPath, JSON.stringify(jsonData, null, 2));
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ message: 'Objeto publicado con éxito' }));
+                res.end(JSON.stringify({ message: "El objeto fue publicado exitosamente, gracias por usar FindIT" }));
             } catch (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
                 res.end('Error interno del servidor');
