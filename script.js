@@ -1,28 +1,30 @@
 function publicarObjeto() {
-    const nombre = document.getElementById('filename').value;
-    const caracteristicas = document.getElementById('caracteristicas').value;
-    const lugarEncontrado = document.getElementById('lugarEncontrado').value;
-    const lugarDejado = document.getElementById('lugarDejado').value;
+    nombre = document.getElementById('filename').value;
+    caracteristicas = document.getElementById('caracteristicas').value;
+    lugarEncontrado = document.getElementById('lugarEncontrado').value;
+    lugarDejado = document.getElementById('lugarDejado').value;
 
-    const objeto = {
+    objeto = {
         nombre: nombre,
         caracteristicas: caracteristicas,
         lugarEncontrado: lugarEncontrado,
         lugarDejado: lugarDejado
     };
 
-    fetch('http://127.0.0.1:5500/publicar.html', {  // Asegúrate de que la URL apunta al servidor Node.js
+    fetch('http://localhost:3000/publicar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(objeto)
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
         alert(data.message);
     })
-    .catch(error => {
+    .catch(function(error) {
         alert('Hubo un error al publicar el objeto');
         console.error('Error:', error);
     });

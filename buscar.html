@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar un objeto</title>
+    <style>
+        #resultados {
+            margin-top: 20px;
+        }
+        .objeto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h2>Buscar Objeto</h2>
+    <input type="text" id="buscador" placeholder="Introduce una palabra clave">
+    <button onclick="buscarObjeto()">Buscar</button>
+
+    <div id="resultados"></div>
+
+    <script src="buscar.js"></script>
 </body>
 </html>
