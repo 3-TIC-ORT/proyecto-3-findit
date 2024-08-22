@@ -24,6 +24,7 @@ function publicarObjeto() {
     .then(function(data) {
         alert(data.message);
     })
+    console.log("El objeto fue publicado exitosamente")
     .catch(function(error) {
         alert('Hubo un error al publicar el objeto');
         console.error('Error:', error);

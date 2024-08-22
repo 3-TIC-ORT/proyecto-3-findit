@@ -1,16 +1,3 @@
 {
-  "objetos": [
-    {
-      "nombre": "asda",
-      "caracteristicas": "sd",
-      "lugarEncontrado": "asd",
-      "lugarDejado": "asd"
-    },
-    {
-      "nombre": "maturro",
-      "caracteristicas": "mochila",
-      "lugarEncontrado": "rata",
-      "lugarDejado": "dada vuelta"
-    }
-  ]
+  "objetos": []
 }
