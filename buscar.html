@@ -2,64 +2,55 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar un objeto</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        #resultados {
-            margin-top: 20px;
-        }
-        .objeto {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 40px;
-        }
-        .buscador {
-            margin: 20px 0;
-        }
-        .buscador input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .buscador button {
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .buscador button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Find It</title>
+    <link rel="stylesheet" href="buscar.css">
 </head>
 <body>
-<div>
-    <a href="index.html">FindIT</a>
-</div>
-
-<div class="buscador">
-    <form id="buscador-form">
-        <input type="text" name="query" placeholder="Buscar objeto..." required>
-        <button type="submit">Buscar</button>
-    </form>
-</div>
-
-<div id="resultados">
-
-</div>
-
-<script src="buscar.js"></script>
+    <header class="header">
+            <img src="Group 1.png" alt="FIND IT Logo">
+            <div class="logo-text">FIND IT</div>
+        <input type="text" class="search-bar" placeholder="Buscador...">
+        <div class="auth-buttons">
+            <button>Registrarse</button>
+            <button>Iniciar Sesión</button>
+        </div>
+    </header>
+    <main class="content">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+            <div class="grid-item">
+                <div class="image-placeholder">Imagen</div>
+                <div class="description">Descripción del objeto</div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
