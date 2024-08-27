@@ -1,3 +1,10 @@
 {
-  "objetos": []
+  "objetos": [
+    {
+      "nombre": "britos",
+      "caracteristicas": "gordibritos",
+      "lugarEncontrado": "jimena",
+      "lugarDejado": "silva"
+    }
+  ]
 }
