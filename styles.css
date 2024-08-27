@@ -5,6 +5,7 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
+<<<<<<< Updated upstream
     height: 100vh;
     width: 100%;
     display: flex;
@@ -43,6 +44,23 @@ header nav {
     justify-content: start; 
 }
 
+=======
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    background-color: #000;
+}
+
+header img {
+    height: 40px;
+    margin-right: 20px; 
+}
+
+>>>>>>> Stashed changes
 header nav a {
     color: white;
     text-decoration: none;
@@ -55,14 +73,23 @@ header .cta {
 }
 
 header .cta button {
+<<<<<<< Updated upstream
     border: none;
     padding: 10px 20px;
     margin-left: 10px;
+=======
+    background-color: #af80ff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: white;
+>>>>>>> Stashed changes
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
 }
 
+<<<<<<< Updated upstream
 
 header .cta button.registrarse {
     background-color: #af80ff;
@@ -104,12 +131,37 @@ h2 {
 
 
 
+=======
+header .cta button:hover {
+    background-color: #c299ff;
+}
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    font-weight: normal   ; 
+}
+
+>>>>>>> Stashed changes
 button.main-btn {
     background-color: #af80ff;
     color: white;
     border: none;
+<<<<<<< Updated upstream
     padding: 20px 45px;
     margin: 30px;
+=======
+    padding: 15px 30px;
+    margin: 20px;
+>>>>>>> Stashed changes
     cursor: pointer;
     font-size: 18px;
     border-radius: 10px;
@@ -119,6 +171,7 @@ button.main-btn {
 button.main-btn:hover {
     background-color: #c299ff;
 }
+<<<<<<< Updated upstream
 h4 {
     font-size: 15px;
     margin-top: 0px;
@@ -142,4 +195,19 @@ h4 {
 
 .rectangle2{
     width: 100%;
+=======
+
+footer {
+    background-color: #af80ff;
+    padding: 20px 0;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+.logo-text {
+    position: fixed;
+    
+>>>>>>> Stashed changes
 }
