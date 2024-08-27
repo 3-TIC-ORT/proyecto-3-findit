@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "proyecto-3-findit",
   "version": "1.0.0",
   "main": "script.js",
@@ -22,4 +23,19 @@
     "express": "^4.19.2",
     "fs": "^0.0.1-security"
   }
+=======
+  "name": "findit",
+  "version": "1.0.0",
+  "description": "Aplicación para publicar y buscar objetos perdidos.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "ISC"
+>>>>>>> 1e223fce8603648bae5e602e9fd0cd9e23a86a99
 }
