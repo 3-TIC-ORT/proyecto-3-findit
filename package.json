@@ -1,29 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "proyecto-3-findit",
-  "version": "1.0.0",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/3-TIC-ORT/proyecto-3-findit.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/3-TIC-ORT/proyecto-3-findit/issues"
-  },
-  "homepage": "https://github.com/3-TIC-ORT/proyecto-3-findit#readme",
-  "description": "",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.2",
-    "fs": "^0.0.1-security"
-  }
-=======
   "name": "findit",
   "version": "1.0.0",
   "description": "Aplicación para publicar y buscar objetos perdidos.",
@@ -37,5 +12,4 @@
   },
   "author": "",
   "license": "ISC"
->>>>>>> 1e223fce8603648bae5e602e9fd0cd9e23a86a99
 }
