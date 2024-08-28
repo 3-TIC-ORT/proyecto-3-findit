@@ -5,46 +5,6 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
-<<<<<<< Updated upstream
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000;
-    height: auto;
-}
-
-header .logo-container {
-    display: flex;
-    align-items: center;
-}
-
-header img {
-    height: 55px;
-    margin-right: 10px; 
-}
-
-header .logo-text {
-    font-size: 15px;
-    font-weight: normal;
-    color: #af80ff;
-}
-
-header nav {
-    font: size 10px;;
-    flex-grow: 1; 
-    display: flex;
-    justify-content: start; 
-}
-
-=======
 }
 
 header {
@@ -52,7 +12,8 @@ header {
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    background-color: #000;
+    background-color: rgba(55, 55, 55, 0.5);
+    backdrop-filter: blur(6px);
 }
 
 header img {
@@ -60,7 +21,6 @@ header img {
     margin-right: 20px; 
 }
 
->>>>>>> Stashed changes
 header nav a {
     color: white;
     text-decoration: none;
@@ -73,65 +33,16 @@ header .cta {
 }
 
 header .cta button {
-<<<<<<< Updated upstream
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-=======
     background-color: #af80ff;
     border: none;
     padding: 10px 20px;
     margin-left: 10px;
     color: white;
->>>>>>> Stashed changes
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
 }
 
-<<<<<<< Updated upstream
-
-header .cta button.registrarse {
-    background-color: #af80ff;
-    color: white;
-}
-
-header .cta button.registrarse:hover {
-    background-color: #c299ff;
-}
-
-header .cta button.iniciar-sesion {
-    background-color: black;
-    color: white;
-    border: #af80ff 2px solid;
-}
-
-header .cta button.iniciar-sesion:hover {
-    background-color: #e0e0e0;
-}
-
-main {
-    width: 100%;
-    height: auto;
-}
-
-h1 {
-    margin-top: 100px;
-    margin-bottom: 0px;
-    font-size: 48px;
-    font-weight: normal;
-}
-
-h2 {
-    font-size: 60px;
-    margin-top: 0px;
-    margin-bottom: 40px;
-    font-weight: normal;
-}
-
-
-
-=======
 header .cta button:hover {
     background-color: #c299ff;
 }
@@ -150,18 +61,12 @@ h2 {
     font-weight: normal   ; 
 }
 
->>>>>>> Stashed changes
 button.main-btn {
     background-color: #af80ff;
     color: white;
     border: none;
-<<<<<<< Updated upstream
-    padding: 20px 45px;
-    margin: 30px;
-=======
     padding: 15px 30px;
     margin: 20px;
->>>>>>> Stashed changes
     cursor: pointer;
     font-size: 18px;
     border-radius: 10px;
@@ -171,31 +76,6 @@ button.main-btn {
 button.main-btn:hover {
     background-color: #c299ff;
 }
-<<<<<<< Updated upstream
-h4 {
-    font-size: 15px;
-    margin-top: 0px;
-    font-weight: normal;
-}
-
-.rectanglepene {
-    width: 100%;
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.rectangle{
-    width: 100%;
-    position: absolute;
-    top: 1;
-    left: 0;
-}
-
-.rectangle2{
-    width: 100%;
-=======
 
 footer {
     background-color: #af80ff;
@@ -209,5 +89,12 @@ footer {
 .logo-text {
     position: fixed;
     
->>>>>>> Stashed changes
+}
+
+video {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
