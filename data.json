@@ -5,6 +5,12 @@
       "caracteristicas": "guido",
       "lugarEncontrado": "mesa",
       "lugarDejado": "comedor de "
+    },
+    {
+      "nombre": "asd",
+      "caracteristicas": "asd",
+      "lugarEncontrado": "asd",
+      "lugarDejado": "asd"
     }
   ]
 }
