@@ -1,3 +1,10 @@
 {
-  "objetos": []
+  "objetos": [
+    {
+      "nombre": "caca",
+      "caracteristicas": "guido",
+      "lugarEncontrado": "mesa",
+      "lugarDejado": "comedor de "
+    }
+  ]
 }

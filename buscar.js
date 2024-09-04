@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let form = document.getElementById('buscador-form');
+    let buscadorInput = document.getElementById('buscador-form');
     let resultadosDiv = document.getElementById('resultados');
+    let buscarButton = document.getElementById('buscar-button');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        let query = form.query.value.toLowerCase();
+    buscarButton.addEventListener('click', function() {
+        let query = buscadorInput.value.toLowerCase();
 
         fetch('data.json')
             .then(response => response.json())
@@ -32,12 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             resultados.forEach(objeto => {
                 let objetoDiv = document.createElement('div');
-                objetoDiv.className = 'objeto';
+                objetoDiv.className = 'grid-item';
                 objetoDiv.innerHTML = `
-                    <h3>${objeto.nombre}</h3>
-                    <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
-                    <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
-                    <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
+                    <div class="description">
+                        <h3>${objeto.nombre}</h3>
+                        <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
+                        <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
+                        <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
+                    </div>
                 `;
                 resultadosDiv.appendChild(objetoDiv);
             });

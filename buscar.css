@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000; 
+    background-color: #000000;
     color: white;
     display: flex;
     flex-direction: column;
@@ -25,52 +25,54 @@ body {
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.img{
-    size: 10px;
+.header a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
 
 .logo-text {
     font-size: 24px;
-    color: #9e7bff; 
+    color: #9e7bff;
     font-weight: bold;
 }
 
-.search-bar {
+.buscador-form {
     flex-grow: 1;
     margin: 0 20px;
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
+    background-color: #333;
+    color: white;
 }
 
 .auth-buttons button {
-    background-color: #9e7bff; 
+    background-color: #9e7bff;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 10px;
+    font-size: 16px;
 }
 
 .auth-buttons button:hover {
-    background-color: #7a63cc; 
+    background-color: #7a63cc;
 }
 
 .content {
     width: 100%;
     max-width: 1200px;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
 }
@@ -80,18 +82,17 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.image-placeholder {
-    background-color: #9e7bff; 
-    color: white;
-    padding: 60px 0; 
-    border-radius: 5px;
-    font-size: 18px;
-    margin-bottom: 10px;
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .description {
     color: white;
     font-size: 14px;
+    line-height: 1.6;
 }

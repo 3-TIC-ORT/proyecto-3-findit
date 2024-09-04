@@ -8,49 +8,16 @@
 </head>
 <body>
     <header class="header">
-            <img src="Group 1.png" alt="FIND IT Logo">
-            <div class="logo-text">FIND IT</div>
-        <input type="text" class="search-bar" placeholder="Buscador...">
+        <img src="Group 1.png" alt="FIND IT Logo">
+        <a href="index.html"><div class="logo-text">FIND IT</div></a>
+        <input type="text" id="buscador-form" class="buscador-form" placeholder="Buscador...">
         <div class="auth-buttons">
-            <button>Registrarse</button>
-            <button>Iniciar Sesión</button>
+            <button id="buscar-button">Buscar</button>
         </div>
     </header>
     <main class="content">
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-            <div class="grid-item">
-                <div class="image-placeholder">Imagen</div>
-                <div class="description">Descripción del objeto</div>
-            </div>
-        </div>
+        <div id="resultados" class="grid-container"></div>
     </main>
+    <script src="buscar.js"></script>
 </body>
 </html>
