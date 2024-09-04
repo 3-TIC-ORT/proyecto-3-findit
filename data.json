@@ -11,6 +11,18 @@
       "caracteristicas": "asd",
       "lugarEncontrado": "asd",
       "lugarDejado": "asd"
+    },
+    {
+      "nombre": "a",
+      "caracteristicas": "a",
+      "lugarEncontrado": "a",
+      "lugarDejado": "a"
+    },
+    {
+      "nombre": "maturro",
+      "caracteristicas": "maturreano",
+      "lugarEncontrado": "andresiano",
+      "lugarDejado": "andresiano"
     }
   ]
 }
