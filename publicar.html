@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Publicar un objeto</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find It</title>
+    <link rel="stylesheet" href="publicar.css">
 </head>
 <body>
-    <style>
-        input {
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-    width: 300px;
-    border-radius: 10px;
-    }   
-    button {
-            display: block;
-            margin: 20px auto; 
-            padding: 15px; 
-            width: 150px;  
-            cursor: pointer;
-            border-radius: 10px;
-        }
-    a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 40px;
-    }
-    </style>
-    
-    <a href="index.html">FindIT</a>
-    <h2>Publicar Objeto Encontrado</h2>
-    <div class="inputs">
-    <input type="text" id="filename" placeholder="Nombre del objeto">
-    <input type="text" id="caracteristicas" placeholder="Características">
-    <input type="text" id="lugarEncontrado" placeholder="Lugar encontrado">
-    <input type="text" id="lugarDejado" placeholder="Lugar dejado">
-    <button onclick="publicarObjeto()">Publicar</button>
-    </div>
-    <script src="script.js"></script>
+    <video src="videoplayback.mp4" autoplay="true" muted="true" loop="true"></video>
+    <header>
+        <a href="index.html">FIND IT</a>
+        <div class="header-left">
+            <div class="logo">
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>Rellena los datos para publicar el objeto</p>
+        <form>
+            <input type="text" id=”filename” placeholder="Nombre del objeto">
+            <input type="text" id=”caracteristicas” placeholder="Características">
+            <input type="text"  id=”lugarEncontrado” placeholder="Lugar encontrado">
+            <input type="text" id=”lugarDejado” placeholder="Lugar dejado">
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
 </body>
 </html>
