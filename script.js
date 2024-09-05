@@ -11,7 +11,7 @@ function publicarObjeto() {
         lugarDejado: lugarDejado
     };
 
-    fetch('http://localhost:3000/publicar', {
+    fetch('http://localhost:4000/publicar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
