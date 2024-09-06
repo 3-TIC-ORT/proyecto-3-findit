@@ -1,16 +1,18 @@
-function publicarObjeto() {
-    nombre = document.getElementById('filename').value;
-    caracteristicas = document.getElementById('caracteristicas').value;
-    lugarEncontrado = document.getElementById('lugarEncontrado').value;
-    lugarDejado = document.getElementById('lugarDejado').value;
+document.getElementById('publicar-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    objeto = {
+    let nombre = document.getElementById('filename').value;
+    let caracteristicas = document.getElementById('caracteristicas').value;
+    let lugarEncontrado = document.getElementById('lugarEncontrado').value;
+    let lugarDejado = document.getElementById('lugarDejado').value;
+
+    let objeto = {
         nombre: nombre,
         caracteristicas: caracteristicas,
         lugarEncontrado: lugarEncontrado,
         lugarDejado: lugarDejado
     };
-
+    
     fetch('http://localhost:4000/publicar', {
         method: 'POST',
         headers: {
@@ -18,15 +20,12 @@ function publicarObjeto() {
         },
         body: JSON.stringify(objeto)
     })
-    .then(function(response) {
-        return response.json();
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message); 
     })
-    .then(function(data) {
-        alert(data.message);
-    })
-    console.log("El objeto fue publicado exitosamente")
-    .catch(function(error) {
-        alert('Hubo un error al publicar el objeto');
+    .catch(error => {
         console.error('Error:', error);
+        alert('Hubo un error al publicar el objeto');
     });
-}
+});

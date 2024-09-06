@@ -1,12 +1,11 @@
 import http from 'http';
 import { readFile, writeFile } from 'fs/promises';
 import { resolve } from 'path';
-import {startServer, onEvent} from "soquetic";
 
-const server = http.createServer(async (req, res) => {
+let servidor = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(200);
@@ -22,12 +21,12 @@ const server = http.createServer(async (req, res) => {
         });
 
         req.on('end', async () => {
-            const objeto = JSON.parse(body);
+            let objeto = JSON.parse(body);
 
             try {
-                const dataPath = resolve('data.json');
-                const data = await readFile(dataPath, 'utf8');
-                const jsonData = JSON.parse(data);
+                let dataPath = resolve('data.json');
+                let data = await readFile(dataPath, 'utf8');
+                let jsonData = JSON.parse(data);
 
                 jsonData.objetos.push(objeto);
 
@@ -47,8 +46,6 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(4000, () => {
+servidor.listen(4000, () => {
     console.log('Servidor escuchando en el puerto 4000');
 });
-
-startServer()

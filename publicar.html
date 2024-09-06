@@ -10,20 +10,17 @@
     <video src="videoplayback.mp4" autoplay="true" muted="true" loop="true"></video>
     <header>
         <a href="index.html">FIND IT</a>
-        <div class="header-left">
-            <div class="logo">
-            </div>
-        </div>
     </header>
     <main>
         <p>Rellena los datos para publicar el objeto</p>
-        <form>
-            <input type="text" id=”filename” placeholder="Nombre del objeto">
-            <input type="text" id=”caracteristicas” placeholder="Características">
-            <input type="text"  id=”lugarEncontrado” placeholder="Lugar encontrado">
-            <input type="text" id=”lugarDejado” placeholder="Lugar dejado">
-            <button onclick="publicarObjeto()">Publicar</button>
+        <form id="publicar-form">
+            <input type="text" id="filename" placeholder="Nombre del objeto" required>
+            <input type="text" id="caracteristicas" placeholder="Características" required>
+            <input type="text" id="lugarEncontrado" placeholder="Lugar encontrado" required>
+            <input type="text" id="lugarDejado" placeholder="Lugar dejado" required>
+            <button type="submit">Publicar</button>
         </form>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
