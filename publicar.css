@@ -91,7 +91,7 @@ input {
 }
 
 
-button[type="submit"] {
+button {
     background: linear-gradient(45deg, #8A00FF, #B366FF);
     border: none;
     padding: 20px 72px;
