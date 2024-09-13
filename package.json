@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "soquetic": "^1.0.3"
+    "soquetic": "^1.0.4"
   },
   "author": "",
   "license": "ISC"
