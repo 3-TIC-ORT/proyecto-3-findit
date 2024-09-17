@@ -1,48 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let buscadorInput = document.getElementById('buscador-form');
-    let resultadosDiv = document.getElementById('resultados');
-    let buscarButton = document.getElementById('buscar-button');
+import { postData } from "soquetic";
 
-    buscarButton.addEventListener('click', function() {
-        let query = buscadorInput.value.toLowerCase();
+let buscarBtn = document.getElementById("buscar-button");
 
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                let objetos = data.objetos;
-                let resultados = buscarObjeto(objetos, query);
-                mostrarResultados(resultados);
-            })
-            .catch(error => console.error('Error cargando el archivo JSON:', error));
+buscarBtn.onclick = function () {
+  let busqueda = document.getElementById("buscador-form").value;
+  
+  postData("buscarObjeto", { busqueda: busqueda }, (resultados) => {
+    let contenedor = document.getElementById("resultados");
+    contenedor.innerHTML = ""; 
+    
+    resultados.forEach(obj => {
+      let item = document.createElement("div");
+      item.className = "objeto";
+      item.innerHTML = `
+        <h3>${obj.nombre}</h3>
+        <p>${obj.caracteristicas}</p>
+        <p>Encontrado en: ${obj.lugarEncontrado}</p>
+        <p>Dejado en: ${obj.lugarDejado}</p>
+      `;
+      contenedor.appendChild(item);
     });
-
-    function buscarObjeto(objetos, query) {
-        return objetos.filter(objeto => 
-            objeto.nombre.toLowerCase().includes(query) ||
-            objeto.caracteristicas.toLowerCase().includes(query) ||
-            objeto.lugarEncontrado.toLowerCase().includes(query) ||
-            objeto.lugarDejado.toLowerCase().includes(query)
-        );
-    }
-
-    function mostrarResultados(resultados) {
-        resultadosDiv.innerHTML = '';
-        if (resultados.length === 0) {
-            resultadosDiv.innerHTML = '<p>No se encontraron objetos.</p>';
-        } else {
-            resultados.forEach(objeto => {
-                let objetoDiv = document.createElement('div');
-                objetoDiv.className = 'grid-item';
-                objetoDiv.innerHTML = `
-                    <div class="description">
-                        <h3>${objeto.nombre}</h3>
-                        <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
-                        <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
-                        <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
-                    </div>
-                `;
-                resultadosDiv.appendChild(objetoDiv);
-            });
-        }
-    }
-});
+  });
+};
