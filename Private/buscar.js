@@ -1,24 +1,21 @@
-import { postData } from "soquetic";
+import SoqueTIC from 'soquetic';
 
-let buscarBtn = document.getElementById("buscar-button");
+let socket = new SoqueTIC.Client('http://localhost:3000');
 
-buscarBtn.onclick = function () {
-  let busqueda = document.getElementById("buscador-form").value;
-  
-  postData("buscarObjeto", { busqueda: busqueda }, (resultados) => {
-    let contenedor = document.getElementById("resultados");
-    contenedor.innerHTML = ""; 
-    
-    resultados.forEach(obj => {
-      let item = document.createElement("div");
-      item.className = "objeto";
-      item.innerHTML = `
-        <h3>${obj.nombre}</h3>
-        <p>${obj.caracteristicas}</p>
-        <p>Encontrado en: ${obj.lugarEncontrado}</p>
-        <p>Dejado en: ${obj.lugarDejado}</p>
-      `;
-      contenedor.appendChild(item);
+document.getElementById('buscar-button').addEventListener('click', function() {
+    let query = document.getElementById('buscador-form').value;
+
+    socket.emit('buscar', query);
+
+    socket.on('buscar-respuesta', (resultados) => {
+        let resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = '';
+
+        resultados.forEach((objeto) => {
+            let div = document.createElement('div');
+            div.className = 'resultado';
+            div.innerHTML = `<h3>${objeto.nombre}</h3><p>${objeto.caracteristicas}</p><p>Lugar Encontrado: ${objeto.lugarEncontrado}</p><p>Lugar Dejado: ${objeto.lugarDejado}</p>`;
+            resultadosDiv.appendChild(div);
+        });
     });
-  });
-};
+});
