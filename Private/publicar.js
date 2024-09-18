@@ -1,23 +1,26 @@
-import SoqueTIC from 'soquetic';
+import { postData } from 'soquetic';
 
-let socket = new SoqueTIC.Client('http://localhost:3000');
+document.getElementById('publicar-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-document.getElementById('publicar-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    const nombre = document.getElementById('filename').value;
+    const caracteristicas = document.getElementById('caracteristicas').value;
+    const lugarEncontrado = document.getElementById('lugarEncontrado').value;
+    const lugarDejado = document.getElementById('lugarDejado').value;
 
-    let nombre = document.getElementById('filename').value;
-    let caracteristicas = document.getElementById('caracteristicas').value;
-    let lugarEncontrado = document.getElementById('lugarEncontrado').value;
-    let lugarDejado = document.getElementById('lugarDejado').value;
+    const objeto = {
+        nombre,
+        caracteristicas,
+        lugarEncontrado,
+        lugarDejado
+    };
 
-    socket.emit('publicar', {
-        nombre: nombre,
-        caracteristicas: caracteristicas,
-        lugarEncontrado: lugarEncontrado,
-        lugarDejado: lugarDejado
-    });
-
-    socket.on('publicar-respuesta', (response) => {
-        alert(response.mensaje);
+    postData('publicarObjeto', objeto, (response) => {
+        if (response.success) {
+            alert('Objeto publicado exitosamente');
+            document.getElementById('publicar-form').reset();
+        } else {
+            alert('Error al publicar el objeto');
+        }
     });
 });

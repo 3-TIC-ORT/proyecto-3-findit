@@ -1,29 +1,41 @@
-import soquetic from 'soquetic';
-import { readFileSync, writeFileSync } from 'fs';
-import { join } from 'path';
+import { startServer, onEvent, sendEvent } from 'soquetic';
+import fs from 'fs';
+import path from 'path';
 
-const dataPath = join(new URL(import.meta.url).pathname, 'data', 'data.json');
-const io = new soquetic.Server();
+const dataFile = path.resolve("./data/data.json");
 
-io.on('connection', (socket) => {
-    console.log('Nuevo cliente conectado');
+startServer(3000);
 
-    socket.on('publicar', (data) => {
-        let objetos = JSON.parse(readFileSync(dataPath, 'utf-8'));
+onEvent('publicarObjeto', (data) => {
+    fs.readFile(dataFile, 'utf8', (err, jsonData) => {
+        if (err) {
+            console.error('Error leyendo el archivo:', err);
+            sendEvent('publicarObjeto', { success: false });
+            return;
+        }
+        const objetos = JSON.parse(jsonData).objetos;
         objetos.push(data);
-        writeFileSync(dataPath, JSON.stringify(objetos, null, 2), 'utf-8');
-        socket.emit('publicar-respuesta', { mensaje: 'Objeto publicado con éxito' });
-    });
 
-    socket.on('buscar', (query) => {
-        let objetos = JSON.parse(readFileSync(dataPath, 'utf-8'));
-        let resultados = objetos.filter(objeto =>
-            objeto.nombre.includes(query) || objeto.caracteristicas.includes(query)
-        );
-        socket.emit('buscar-respuesta', resultados);
+        fs.writeFile(dataFile, JSON.stringify({ objetos }, null, 2), (err) => {
+            if (err) {
+                console.error('Error escribiendo el archivo:', err);
+                sendEvent('publicarObjeto', { success: false });
+                return;
+            }
+            sendEvent('publicarObjeto', { success: true });
+        });
     });
 });
 
-io.listen(3000, () => {
-    console.log('Servidor escuchando en puerto 3000');
+onEvent('buscarObjeto', (data) => {
+    fs.readFile(dataFile, 'utf8', (err, jsonData) => {
+        if (err) {
+            console.error('Error leyendo el archivo:', err);
+            sendEvent('buscarObjeto', { objetos: [] });
+            return;
+        }
+        const objetos = JSON.parse(jsonData).objetos;
+        const resultado = objetos.filter(objeto => objeto.nombre.toLowerCase().includes(data.nombre.toLowerCase()));
+        sendEvent('buscarObjeto', { objetos: resultado });
+    });
 });
