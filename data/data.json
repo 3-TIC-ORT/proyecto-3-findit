@@ -1,0 +1,16 @@
+{
+  "objetos": [
+    {
+      "nombre": "asd",
+      "caracteristicas": "asd",
+      "lugarEncontrado": "asd",
+      "lugarDejado": "asd"
+    },
+    {
+      "nombre": "maturro",
+      "caracteristicas": "rata",
+      "lugarEncontrado": "mochila",
+      "lugarDejado": "rata"
+    }
+  ]
+}

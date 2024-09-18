@@ -1,41 +1,23 @@
-import { startServer, onEvent, sendEvent } from 'soquetic';
 import fs from 'fs';
-import path from 'path';
+import { onEvent, startServer, sendEvent } from 'soquetic';
 
-const dataFile = path.resolve("./data/data.json");
+const dataPath = 'data/data.json';
 
-startServer(3000);
+function leerDatos() {
+  let data = fs.readFileSync(dataPath, 'utf8');
+  return JSON.parse(data);
+}
 
-onEvent('publicarObjeto', (data) => {
-    fs.readFile(dataFile, 'utf8', (err, jsonData) => {
-        if (err) {
-            console.error('Error leyendo el archivo:', err);
-            sendEvent('publicarObjeto', { success: false });
-            return;
-        }
-        const objetos = JSON.parse(jsonData).objetos;
-        objetos.push(data);
+function escribirDatos(data) {
+  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+}
 
-        fs.writeFile(dataFile, JSON.stringify({ objetos }, null, 2), (err) => {
-            if (err) {
-                console.error('Error escribiendo el archivo:', err);
-                sendEvent('publicarObjeto', { success: false });
-                return;
-            }
-            sendEvent('publicarObjeto', { success: true });
-        });
-    });
+onEvent('obtenerObjetos', () => leerDatos());
+
+onEvent('publicarObjeto', (nuevoObjeto) => {
+  let datos = leerDatos();
+  datos.objetos.push(nuevoObjeto);
+  escribirDatos(datos);
 });
 
-onEvent('buscarObjeto', (data) => {
-    fs.readFile(dataFile, 'utf8', (err, jsonData) => {
-        if (err) {
-            console.error('Error leyendo el archivo:', err);
-            sendEvent('buscarObjeto', { objetos: [] });
-            return;
-        }
-        const objetos = JSON.parse(jsonData).objetos;
-        const resultado = objetos.filter(objeto => objeto.nombre.toLowerCase().includes(data.nombre.toLowerCase()));
-        sendEvent('buscarObjeto', { objetos: resultado });
-    });
-});
+startServer();
