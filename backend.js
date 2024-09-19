@@ -1,15 +1,15 @@
 import fs from "fs";
 import { onEvent, startServer, sendEvent } from "soquetic";
 
-const dataPath = "data/data.json";
+const datos = "data/data.json";
 
 function leerDatos() {
-  let data = fs.readFileSync(dataPath, "utf8");
+  let data = fs.readFileSync(datos, "utf8");
   return JSON.parse(data);
 }
 
 function escribirDatos(data) {
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  fs.writeFileSync(datos, JSON.stringify(data, null, 2));
 }
 
 onEvent("obtenerObjetos", () => leerDatos());
