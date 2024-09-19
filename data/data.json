@@ -11,6 +11,12 @@
       "caracteristicas": "rata",
       "lugarEncontrado": "mochila",
       "lugarDejado": "rata"
+    },
+    {
+      "nombre": "maturro",
+      "caracteristicas": "maturreano",
+      "lugarEncontrado": "maturroro",
+      "lugarDejado": "maturrra"
     }
   ]
 }
