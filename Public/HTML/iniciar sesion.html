@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="/Public/Styles/styles.css">
+    <script src="/Public/Scripts/socket.js"></script>
+    <script src="/Public/Scripts/iniciosesion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 </head>
 <body>
     <video src="videoplayback.mp4" autoplay="true" muted="true" loop="true"></video>
@@ -23,6 +26,13 @@
 
     <main>
         <h1>FIND IT</h1>
+
+            <div id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Nombre de usuario">
+                <input type="password" id="loginPassword" placeholder="Contraseña">
+                <button onclick="login()">Iniciar sesión</button>
+            </div>
+
         <h2>Inicia sesion</h2>
         <h3>No tenes una cuenta?</h3>
         <a href="registrarse.html"><button class="main-btn">Registrarse</button></a>

@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="/Public/Styles/styles.css">
+    <script src="/Public/Scripts/registro.js"></script>
+    <script src="/Public/Scripts/socket.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 </head>
 <body>
     <video src="videoplayback.mp4" autoplay="true" muted="true" loop="true"></video>
+
+    <header>
+            <nav>
+                <a href="acerca.html">Sobre Nosotros</a>
+                <a href="guia.html">¿Cómo Usar La Web?</a>
+                <a href="acercapagina.html">Sobre La Web</a>
+            </nav>
+            <div class="cta">
+                <a href="registrarse.html"><button>Registrarse</button></a>
+                <a href="iniciar sesion.html"><button>Iniciar Sesion</button></a>
+            </div>
+    </header>
+
     <main>
         <h1>FIND IT</h1>
         <h2>Registrate</h2>
+
+            <div id="registerForm">
+                <input type="text" id="registerUsername" placeholder="Nombre de usuario">
+                <input type="password" id="registerPassword" placeholder="Contraseña">
+                <button onclick="register()">Registrarse</button>
+            </div>
+
         <a href="iniciar sesion.html"><button class="main-btn">Iniciar Sesion</button></a>
         <p>Entre Mochilas, Lancheras, Botellas Y Mas.</p>
     </main>
