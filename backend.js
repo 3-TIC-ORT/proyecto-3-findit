@@ -20,14 +20,10 @@ onEvent("publicarObjeto", (nuevoObjeto) => {
   escribirDatos(datos);
 });
 
-onEvent("buscarObjeto", (nombre)=>{
-  let datos =leerDatos();
-  datos.objetos.forEach(e => {
-      if(e.nombre===nombre){
-        return e
-      }
-  });
-})
+onEvent("buscarObjeto", (nombre) => {
+  let datos = leerDatos();
+  return datos.objetos.find(e => e.nombre === nombre);
+});
 
 let users = [];
 
