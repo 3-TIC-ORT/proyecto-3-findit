@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - FIND IT</title>
+    <title>Inicio de sesión</title>
     <link rel="stylesheet" href="/Public/Styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="/Public/Scripts/socket.js"></script>
-    <script src="/Public/Scripts/registro.js"></script>
+    <script src="/Public/Scripts/iniciosesion.js"></script>
 </head>
 <body>
     <video src="videoplayback.mp4" autoplay muted loop></video>
-
     <header>
         <nav>
             <a href="acerca.html">Sobre Nosotros</a>
@@ -20,30 +19,31 @@
             <a href="acercapagina.html">Sobre La Web</a>
         </nav>
         <div class="cta">
-            <a href="registrarse.html"><button>Registrarse</button></a>
-            <a href="iniciarsesion.html"><button>Iniciar Sesión</button></a>
+            <a href="/Public/HTML/registrarse.html"><button>Registrarse</button></a>
+            <a href="/Public/HTML/iniciar sesion.html"><button>Iniciar Sesión</button></a>
         </div>
     </header>
 
     <main>
         <h1>FIND IT</h1>
-        <h2>Regístrate</h2>
 
-        <div id="registerForm">
-            <input type="text" id="registerUsername" placeholder="Nombre de usuario">
-            <input type="password" id="registerPassword" placeholder="Contraseña">
-            <button onclick="register()">Registrarse</button>
+        <div id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Nombre de usuario">
+            <input type="password" id="loginPassword" placeholder="Contraseña">
+            <button onclick="login()">Iniciar sesión</button>
         </div>
 
         <div id="message"></div>
 
-        <a href="iniciarsesion.html"><button class="main-btn">Iniciar Sesión</button></a>
+        <h2>Inicia sesión</h2>
+        <h3>¿No tienes una cuenta?</h3>
+        <a href="/Public/HTML/registrarse.html"><button class="main-btn">Registrarse</button></a>
         <p>Entre Mochilas, Lancheras, Botellas Y Más.</p>
     </main>
 
     <style>
-    .main-btn {
-        margin-top: 20px;
+    h3 {
+        padding-top: 100px;
     }
     #message {
         margin: 10px 0;

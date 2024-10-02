@@ -5,14 +5,6 @@ window.onload = function() {
     }
 }
 
-function isValidUsername(username) {
-    return /^[a-zA-Z0-9]+$/.test(username);
-}
-
-function isValidPassword(password) {
-    return password.length >= 8 && /\d/.test(password);
-}
-
 function login() {
     const username = document.getElementById('loginUsername').value;
     const password = document.getElementById('loginPassword').value;
@@ -30,5 +22,5 @@ function login() {
 function displayMessage(message) {
     const messageElement = document.getElementById('message');
     messageElement.textContent = message;
-    messageElement.style.color = message.includes('exitoso');
+    messageElement.style.color = message.includes('exitoso') ? 'green' : 'red';
 }
