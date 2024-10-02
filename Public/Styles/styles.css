@@ -16,6 +16,12 @@ header {
     backdrop-filter: blur(6px);
 }
 
+.cuentas{
+    position: relative;
+    flex-direction: row;
+    left: 35rem;
+}
+
 header img {
     height: 40px;
     margin-right: 20px; 
