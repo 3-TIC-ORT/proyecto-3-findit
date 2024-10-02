@@ -12,17 +12,27 @@ function escribirDatos(data) {
   fs.writeFileSync(datos, JSON.stringify(data, null, 2));
 }
 
+
+
 onEvent("obtenerObjetos", () => leerDatos());
 
 onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
-  datos.objetos.push(nuevoObjeto);
+  datos.push(nuevoObjeto);
   escribirDatos(datos);
 });
 
-onEvent("buscarObjeto", (nombre) => {
-  let datos = leerDatos();
-  return datos.objetos.find(e => e.nombre === nombre);
-});
+function filtrarDatos(input){
+  let datos = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
+  let objetosEncontrados = [];
+  for (const objeto of datos){
+    if(objeto.nombre == input){     
+      objetosEncontrados.push(objeto)
+    }
+    
+  }
+  return (objetosEncontrados);
+}
 
+onEvent("buscarObjeto", filtrarDatos)
 startServer();

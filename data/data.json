@@ -1,34 +1,38 @@
-{
-  "objetos": [
-    {
-      "nombre": "asd",
-      "caracteristicas": "asd",
-      "lugarEncontrado": "asd",
-      "lugarDejado": "asd"
-    },
-    {
-      "nombre": "maturro",
-      "caracteristicas": "rata",
-      "lugarEncontrado": "mochila",
-      "lugarDejado": "rata"
-    },
-    {
-      "nombre": "maturro",
-      "caracteristicas": "maturreano",
-      "lugarEncontrado": "maturroro",
-      "lugarDejado": "maturrra"
-    },
-    {
-      "nombre": "maturro",
-      "caracteristicas": "maturreano",
-      "lugarEncontrado": "andresiano",
-      "lugarDejado": "andresiano"
-    },
-    {
-      "nombre": "asdasd",
-      "caracteristicas": "asdasd",
-      "lugarEncontrado": "asdasd",
-      "lugarDejado": "asdasdasd"
-    }
-  ]
-}
+[
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd"
+  },
+  {
+    "nombre": "maturro",
+    "caracteristicas": "rata",
+    "lugarEncontrado": "mochila",
+    "lugarDejado": "rata"
+  },
+  {
+    "nombre": "maturro",
+    "caracteristicas": "maturreano",
+    "lugarEncontrado": "maturroro",
+    "lugarDejado": "maturrra"
+  },
+  {
+    "nombre": "maturro",
+    "caracteristicas": "maturreano",
+    "lugarEncontrado": "andresiano",
+    "lugarDejado": "andresiano"
+  },
+  {
+    "nombre": "asdasd",
+    "caracteristicas": "asdasd",
+    "lugarEncontrado": "asdasd",
+    "lugarDejado": "asdasdasd"
+  },
+  {
+    "nombre": "sa",
+    "caracteristicas": "123ewr",
+    "lugarEncontrado": "s",
+    "lugarDejado": "dfw"
+  }
+]
