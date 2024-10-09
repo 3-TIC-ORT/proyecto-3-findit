@@ -1,5 +1,5 @@
 import fs from "fs";
-import { onEvent, startServer, sendEvent } from "soquetic";
+import { onEvent, startServer } from "soquetic";
 
 const datos = "data/data.json";
 
@@ -12,8 +12,6 @@ function escribirDatos(data) {
   fs.writeFileSync(datos, JSON.stringify(data, null, 2));
 }
 
-
-
 onEvent("obtenerObjetos", () => leerDatos());
 
 onEvent("publicarObjeto", (nuevoObjeto) => {
@@ -22,16 +20,24 @@ onEvent("publicarObjeto", (nuevoObjeto) => {
   escribirDatos(datos);
 });
 
-function filtrarDatos(input){
+function filtrarDatos(input) {
   let datos = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
   let objetosEncontrados = [];
-  for (const objeto of datos){
-    if(objeto.nombre == input){     
-      objetosEncontrados.push(objeto)
+  for (const objeto of datos) {
+    if (objeto.nombre === input) {
+      objetosEncontrados.push(objeto);
     }
-    
   }
-  return (objetosEncontrados);
+  return objetosEncontrados;
+}
+
+function reclamarObjeto(nombreObjeto) {
+  let datos = leerDatos();
+  let nuevosDatos = datos.filter(objeto => objeto.nombre !== nombreObjeto);
+  escribirDatos(nuevosDatos);
+  return datos.length !== nuevosDatos.length 
+    ? { success: true, message: "Objeto reclamado exitosamente." } 
+    : { success: false, message: "Objeto no encontrado." };
 }
 
 let users = [];
@@ -57,7 +63,7 @@ function saveUsers() {
     throw err;
   }
 }
-2
+
 function isValidUsername(username) {
   return /^[a-zA-Z0-9]+$/.test(username);
 }
@@ -111,6 +117,11 @@ onEvent('checkSession', (data) => {
   }
 });
 
-loadUsers()
-onEvent("buscarObjeto", filtrarDatos)
+onEvent("reclamarObjeto", (data) => {
+  const { nombre } = data;
+  return reclamarObjeto(nombre);
+});
+
+loadUsers();
+onEvent("buscarObjeto", filtrarDatos);
 startServer();

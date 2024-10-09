@@ -152,3 +152,15 @@ video {
 .result-box:hover::before {
     background: rgba(0, 0, 0, 0.5);
 }
+
+button {
+    background-color: #af80ff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}

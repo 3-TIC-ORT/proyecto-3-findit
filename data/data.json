@@ -6,24 +6,6 @@
     "lugarDejado": "asd"
   },
   {
-    "nombre": "maturro",
-    "caracteristicas": "rata",
-    "lugarEncontrado": "mochila",
-    "lugarDejado": "rata"
-  },
-  {
-    "nombre": "maturro",
-    "caracteristicas": "maturreano",
-    "lugarEncontrado": "maturroro",
-    "lugarDejado": "maturrra"
-  },
-  {
-    "nombre": "maturro",
-    "caracteristicas": "maturreano",
-    "lugarEncontrado": "andresiano",
-    "lugarDejado": "andresiano"
-  },
-  {
     "nombre": "asdasd",
     "caracteristicas": "asdasd",
     "lugarEncontrado": "asdasd",
@@ -36,9 +18,27 @@
     "lugarDejado": "dfw"
   },
   {
+    "nombre": "mochila 1",
+    "caracteristicas": "33",
+    "lugarEncontrado": "33",
+    "lugarDejado": "33"
+  },
+  {
     "nombre": "mochila",
-    "caracteristicas": "roja",
-    "lugarEncontrado": "oficina",
-    "lugarDejado": "ofinicia"
+    "caracteristicas": "mochila",
+    "lugarEncontrado": "mochila",
+    "lugarDejado": "mochila"
+  },
+  {
+    "nombre": "mochila",
+    "caracteristicas": "2",
+    "lugarEncontrado": "2",
+    "lugarDejado": "2"
+  },
+  {
+    "nombre": "mochila",
+    "caracteristicas": "87",
+    "lugarEncontrado": "87",
+    "lugarDejado": "87"
   }
 ]
