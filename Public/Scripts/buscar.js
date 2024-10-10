@@ -7,10 +7,11 @@ function buscar() {
     });
 }
 
-function reclamarObjeto(nombreObjeto) {
-    postData("reclamarObjeto", { nombre: nombreObjeto }, (response) => {
+function reclamarObjeto(idObjeto) {
+    postData("reclamarObjeto", { id: idObjeto }, (response) => {
         alert(response.message);
         if (response.success) {
+            buscar();
         }
     });
 }
@@ -28,7 +29,7 @@ function mostrarResultados(objetos) {
             <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
             <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
             <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
-            <button onclick="reclamarObjeto('${objeto.nombre}')">Reclamar Objeto</button>
+            <button onclick="reclamarObjeto(${objeto.id})">Reclamar Objeto</button>
         `;
 
         resultadosDiv.appendChild(objetoDiv);

@@ -3,6 +3,8 @@ import { onEvent, startServer } from "soquetic";
 
 const datos = "data/data.json";
 
+let objetoIdCounter = 1; 
+
 function leerDatos() {
   let data = fs.readFileSync(datos, "utf8");
   return JSON.parse(data);
@@ -16,6 +18,8 @@ onEvent("obtenerObjetos", () => leerDatos());
 
 onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
+    nuevoObjeto.id = objetoIdCounter++;
+  
   datos.push(nuevoObjeto);
   escribirDatos(datos);
 });
@@ -29,15 +33,6 @@ function filtrarDatos(input) {
     }
   }
   return objetosEncontrados;
-}
-
-function reclamarObjeto(nombreObjeto) {
-  let datos = leerDatos();
-  let nuevosDatos = datos.filter(objeto => objeto.nombre !== nombreObjeto);
-  escribirDatos(nuevosDatos);
-  return datos.length !== nuevosDatos.length 
-    ? { success: true, message: "Objeto reclamado exitosamente." } 
-    : { success: false, message: "Objeto no encontrado." };
 }
 
 let users = [];
@@ -117,11 +112,23 @@ onEvent('checkSession', (data) => {
   }
 });
 
+function reclamarObjeto(idObjeto) {
+  let datos = leerDatos();
+  
+  let nuevosDatos = datos.filter(objeto => objeto.id !== idObjeto);
+  
+  escribirDatos(nuevosDatos);
+  
+  return datos.length !== nuevosDatos.length 
+    ? { success: true, message: "Objeto reclamado exitosamente." } 
+    : { success: false, message: "Objeto no encontrado." };
+}
+
 onEvent("reclamarObjeto", (data) => {
-  const { nombre } = data;
-  return reclamarObjeto(nombre);
+  const { id } = data; 
+  return reclamarObjeto(id);
 });
 
-loadUsers();
 onEvent("buscarObjeto", filtrarDatos);
+
 startServer();
