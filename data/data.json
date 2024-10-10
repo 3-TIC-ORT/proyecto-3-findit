@@ -1,30 +1,30 @@
 [
   {
     "nombre": "mochila",
-    "caracteristicas": "kjasdkkasd",
-    "lugarEncontrado": "kaskdkas",
-    "lugarDejado": "kaskdkasd",
+    "caracteristicas": "roja con una etiqueta verde",
+    "lugarEncontrado": "L203",
+    "lugarDejado": "Oficina TIC",
+    "id": 1
+  },
+  {
+    "nombre": "Cartuchera",
+    "caracteristicas": "Negra",
+    "lugarEncontrado": "L114",
+    "lugarDejado": "Oficina 1er piso",
     "id": 2
   },
   {
-    "nombre": "carlos",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
+    "nombre": "Auriculares",
+    "caracteristicas": "Blancos",
+    "lugarEncontrado": "L2",
+    "lugarDejado": "Oficina TIC",
     "id": 3
   },
   {
     "nombre": "mochila",
-    "caracteristicas": "maturreano",
-    "lugarEncontrado": "a",
-    "lugarDejado": "oficina TIC",
-    "id": 1
-  },
-  {
-    "nombre": "mochila",
-    "caracteristicas": "mochila",
-    "lugarEncontrado": "mochila",
-    "lugarDejado": "oficina TIC",
-    "id": 2
+    "caracteristicas": "roja",
+    "lugarEncontrado": "L213",
+    "lugarDejado": "Oficina TIC",
+    "id": 5
   }
 ]
