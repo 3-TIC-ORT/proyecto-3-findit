@@ -1,8 +1,8 @@
 import fs from "fs";
 import { onEvent, startServer } from "soquetic";
 
-const datos = "data/data.json";
-const logsFile = "data/logs.json";
+let datos = "data/data.json";
+let logsFile = "data/logs.json";
 let objetoIdCounter = 1;
 
 function leerDatos() {
@@ -51,14 +51,14 @@ function reclamarObjeto(idObjeto, nombre, apellido) {
 }
 
 onEvent("reclamarObjeto", (data) => {
-  const { id, nombre, apellido } = data;
+  let { id, nombre, apellido } = data;
   return reclamarObjeto(id, nombre, apellido);
 });
 
 onEvent("buscarObjeto", (input) => {
   let datos = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
   let objetosEncontrados = [];
-  for (const objeto of datos) {
+  for (let objeto of datos) {
     if (objeto.nombre === input) {
       objetosEncontrados.push(objeto);
     }
@@ -70,7 +70,7 @@ let users = [];
 
 function loadUsers() {
   try {
-    const data = fs.readFileSync('users.json', 'utf8');
+    let data = fs.readFileSync('users.json', 'utf8');
     users = JSON.parse(data);
   } catch (err) {
     if (err.code === 'ENOENT') {
@@ -100,7 +100,7 @@ function isValidPassword(password) {
 
 onEvent('register', (data) => {
   try {
-    const { username, password } = data;
+    let { username, password } = data;
     
     if (!isValidUsername(username)) {
       return { success: false, message: 'El nombre de usuario solo puede contener letras y números' };
@@ -124,8 +124,8 @@ onEvent('register', (data) => {
 });
 
 onEvent('login', (data) => {
-  const { username, password } = data;
-  const user = users.find(user => user.username === username && user.password === password);
+  let { username, password } = data;
+  let user = users.find(user => user.username === username && user.password === password);
   if (user) {
     return { success: true, message: 'Inicio de sesión exitoso', username: user.username };
   } else {
@@ -134,8 +134,8 @@ onEvent('login', (data) => {
 });
 
 onEvent('checkSession', (data) => {
-  const { username } = data;
-  const user = users.find(user => user.username === username);
+  let { username } = data;
+  let user = users.find(user => user.username === username);
   if (user) {
     return { success: true, message: 'Sesión válida', username: user.username };
   } else {

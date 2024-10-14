@@ -1,12 +1,5 @@
 [
   {
-    "nombre": "Cartuchera",
-    "caracteristicas": "Negra",
-    "lugarEncontrado": "L114",
-    "lugarDejado": "Oficina 1er piso",
-    "id": 2
-  },
-  {
     "nombre": "Auriculares",
     "caracteristicas": "Blancos",
     "lugarEncontrado": "L2",

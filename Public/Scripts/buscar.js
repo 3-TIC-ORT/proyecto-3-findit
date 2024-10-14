@@ -25,7 +25,7 @@ function reclamarObjeto() {
             }
         });
     } else {
-        alert("Por favor, complete el nombre, apellido y seleccione un objeto.");
+        alert("Por favor, complete el nombre y apellido");
     }
 }
 

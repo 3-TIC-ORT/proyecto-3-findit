@@ -16,5 +16,11 @@
     "nombre": "guido",
     "apellido": "jacofsky",
     "fecha": "2024-10-14T11:23:29.636Z"
+  },
+  {
+    "idObjeto": 2,
+    "nombre": "arro",
+    "apellido": "arro",
+    "fecha": "2024-10-14T11:33:35.803Z"
   }
 ]
