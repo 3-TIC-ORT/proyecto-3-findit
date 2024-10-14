@@ -1,12 +1,5 @@
 [
   {
-    "nombre": "mochila",
-    "caracteristicas": "roja con una etiqueta verde",
-    "lugarEncontrado": "L203",
-    "lugarDejado": "Oficina TIC",
-    "id": 1
-  },
-  {
     "nombre": "Cartuchera",
     "caracteristicas": "Negra",
     "lugarEncontrado": "L114",
