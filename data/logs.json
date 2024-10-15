@@ -22,5 +22,11 @@
     "nombre": "arro",
     "apellido": "arro",
     "fecha": "2024-10-14T11:33:35.803Z"
+  },
+  {
+    "idObjeto": 5,
+    "nombre": "sol",
+    "apellido": "perez",
+    "fecha": "2024-10-15T01:23:09.318Z"
   }
 ]

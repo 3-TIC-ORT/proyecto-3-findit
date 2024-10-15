@@ -9,8 +9,15 @@
   {
     "nombre": "mochila",
     "caracteristicas": "roja",
-    "lugarEncontrado": "L213",
-    "lugarDejado": "Oficina TIC",
-    "id": 5
+    "lugarEncontrado": "L220",
+    "lugarDejado": "OFICINA MEDIOS",
+    "id": 1
+  },
+  {
+    "nombre": "mochila",
+    "caracteristicas": "verde, jansport",
+    "lugarEncontrado": "l200",
+    "lugarDejado": "l203",
+    "id": 2
   }
 ]
