@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
-    <link rel="stylesheet" href="/Public/Styles/styles.css">
+    <link rel="stylesheet" href="/Public/Styles/iniciar sesion.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="/Public/Scripts/socket.js"></script>
     <script src="/Public/Scripts/iniciosesion.js"></script>
@@ -25,8 +25,9 @@
     </header>
 
     <main>
+    <div class="container">
         <h1>FIND IT</h1>
-
+        <h2>Iniciar Sesion</h2>
         <div id="loginForm">
             <input type="text" id="loginUsername" placeholder="Nombre de usuario">
             <input type="password" id="loginPassword" placeholder="Contraseña">
@@ -34,21 +35,12 @@
         </div>
 
         <div id="message"></div>
-
-        <h2>Inicia sesión</h2>
         <h3>¿No tienes una cuenta?</h3>
         <a href="/Public/HTML/registrarse.html"><button class="main-btn">Registrarse</button></a>
+    </div>
         <p>Entre Mochilas, Lancheras, Botellas Y Más.</p>
     </main>
 
-    <style>
-    h3 {
-        padding-top: 100px;
-    }
-    #message {
-        margin: 10px 0;
-        font-weight: bold;
-    }
-    </style>
+
 </body>
 </html>

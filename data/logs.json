@@ -28,5 +28,11 @@
     "nombre": "sol",
     "apellido": "perez",
     "fecha": "2024-10-15T01:23:09.318Z"
+  },
+  {
+    "idObjeto": 1,
+    "nombre": "Lucas",
+    "apellido": "Park",
+    "fecha": "2024-10-16T10:56:32.043Z"
   }
 ]

@@ -8,13 +8,6 @@
   },
   {
     "nombre": "mochila",
-    "caracteristicas": "roja",
-    "lugarEncontrado": "L220",
-    "lugarDejado": "OFICINA MEDIOS",
-    "id": 1
-  },
-  {
-    "nombre": "mochila",
     "caracteristicas": "verde, jansport",
     "lugarEncontrado": "l200",
     "lugarDejado": "l203",
