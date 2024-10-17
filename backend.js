@@ -6,8 +6,12 @@ let logsFile = "data/logs.json";
 let objetoIdCounter = 1;
 
 function leerDatos() {
-  let data = fs.readFileSync(datos, "utf8");
-  return JSON.parse(data);
+  if (fs.existsSync(datos)) {
+    let data = fs.readFileSync(datos, "utf8");
+    return JSON.parse(data);
+  } else {
+    return [];
+  }
 }
 
 function escribirDatos(data) {
@@ -15,10 +19,10 @@ function escribirDatos(data) {
 }
 
 function leerLogs() {
-  try {
+  if (fs.existsSync(logsFile)) {
     let data = fs.readFileSync(logsFile, "utf8");
     return JSON.parse(data);
-  } catch (error) {
+  } else {
     return [];
   }
 }
@@ -56,7 +60,7 @@ onEvent("reclamarObjeto", (data) => {
 });
 
 onEvent("buscarObjeto", (input) => {
-  let datos = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
+  let datos = leerDatos();
   let objetosEncontrados = [];
   for (let objeto of datos) {
     if (objeto.nombre === input) {
@@ -69,27 +73,23 @@ onEvent("buscarObjeto", (input) => {
 let users = [];
 
 function loadUsers() {
-  try {
+  if (fs.existsSync('users.json')) {
     let data = fs.readFileSync('users.json', 'utf8');
     users = JSON.parse(data);
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      console.log('users.json not found, starting with empty user list');
-    } else {
-      console.error('Error reading users file:', err);
-    }
+  } else {
+    console.log('users.json not found, starting with empty user list');
   }
 }
 
 function saveUsers() {
-  try {
+  if (fs.existsSync('users.json')) {
     fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
-  } catch (err) {
-    console.error('Error saving users file:', err);
-    throw err;
+  } else {
+    console.error('Error: users.json no existe. Creando el archivo...');
+    fs.writeFileSync('users.json', JSON.stringify(users, null, 2)); // Crea el archivo si no existe
   }
 }
-2
+
 function isValidUsername(username) {
   return /^[a-zA-Z0-9]+$/.test(username);
 }
@@ -99,49 +99,40 @@ function isValidPassword(password) {
 }
 
 onEvent('register', (data) => {
-  try {
-    let { username, password } = data;
-    
-    if (!isValidUsername(username)) {
-      return { success: false, message: 'El nombre de usuario solo puede contener letras y números' };
-    }
-    
-    if (!isValidPassword(password)) {
-      return { success: false, message: 'La contraseña debe tener al menos 8 caracteres y contener al menos un número' };
-    }
-    
-    if (users.some(user => user.username === username)) {
-      return { success: false, message: 'El nombre de usuario ya existe' };
-    }
-    
-    users.push({ username, password });
-    saveUsers();
-    return { success: true, message: 'Registro exitoso' };
-  } catch (err) {
-    console.error('Error during registration:', err);
-    return { success: false, message: 'Ocurrió un error durante el registro' };
+  let { username, password } = data;
+  
+  if (!isValidUsername(username)) {
+    return { success: false, message: 'El nombre de usuario solo puede contener letras y números' };
   }
+  
+  if (!isValidPassword(password)) {
+    return { success: false, message: 'La contraseña debe tener al menos 8 caracteres y contener al menos un número' };
+  }
+  
+  if (users.some(user => user.username === username)) {
+    return { success: false, message: 'El nombre de usuario ya existe' };
+  }
+  
+  users.push({ username, password });
+  saveUsers();
+  return { success: true, message: 'Registro exitoso' };
 });
 
 onEvent('login', (data) => {
   let { username, password } = data;
   let user = users.find(user => user.username === username && user.password === password);
-  if (user) {
-    return { success: true, message: 'Inicio de sesión exitoso', username: user.username };
-  } else {
-    return { success: false, message: 'Usuario o contraseña inválidos' };
-  }
+  return user 
+    ? { success: true, message: 'Inicio de sesión exitoso', username: user.username }
+    : { success: false, message: 'Usuario o contraseña inválidos' };
 });
 
 onEvent('checkSession', (data) => {
   let { username } = data;
   let user = users.find(user => user.username === username);
-  if (user) {
-    return { success: true, message: 'Sesión válida', username: user.username };
-  } else {
-    return { success: false, message: 'Sesión inválida' };
-  }
+  return user
+    ? { success: true, message: 'Sesión válida', username: user.username }
+    : { success: false, message: 'Sesión inválida' };
 });
 
-  loadUsers();
-  startServer();
+loadUsers();
+startServer();
