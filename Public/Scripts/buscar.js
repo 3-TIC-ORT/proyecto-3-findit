@@ -32,7 +32,7 @@ function reclamarObjeto() {
 function mostrarResultados(objetos) {
     let resultadosDiv = document.getElementById("resultados");
     resultadosDiv.innerHTML = "";
-    
+
     objetos.forEach(objeto => {
         let objetoDiv = document.createElement("div");
         objetoDiv.classList.add("result-box");
@@ -42,6 +42,7 @@ function mostrarResultados(objetos) {
             <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
             <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
             <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
+            <p><strong>Publicado por:</strong> ${objeto.publicadoPor}</p>
             <button onclick="seleccionarObjeto(${objeto.id})">Seleccionar</button>
         `;
 

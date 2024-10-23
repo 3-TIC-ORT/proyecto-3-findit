@@ -36,6 +36,11 @@ onEvent("obtenerObjetos", () => leerDatos());
 onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
   nuevoObjeto.id = objetoIdCounter++;
+  if (nuevoObjeto.nombrePublicador && nuevoObjeto.apellidoPublicador) {
+    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;
+  } else {
+    nuevoObjeto.publicadoPor = "Anónimo";
+  }
   datos.push(nuevoObjeto);
   escribirDatos(datos);
 });
@@ -86,7 +91,7 @@ function saveUsers() {
     fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
   } else {
     console.error('Error: users.json no existe. Creando el archivo...');
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2)); // Crea el archivo si no existe
+    fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
   }
 }
 

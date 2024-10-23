@@ -1,4 +1,3 @@
-
 document.getElementById("publicar-form").addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -6,19 +5,23 @@ document.getElementById("publicar-form").addEventListener("submit", async (event
   let caracteristicas = document.getElementById("caracteristicas").value;
   let lugarEncontrado = document.getElementById("lugarEncontrado").value;
   let lugarDejado = document.getElementById("lugarDejado").value;
+  let nombrePersona = document.getElementById("nombre").value;
+  let apellidoPersona = document.getElementById("apellido").value;
 
   let nuevoObjeto = {
     nombre,
     caracteristicas,
     lugarEncontrado,
-    lugarDejado
+    lugarDejado,
+    publicadoPor: {
+      nombre: nombrePersona,
+      apellido: apellidoPersona
+    }
   };
 
-  try {
-    await postData("publicarObjeto", nuevoObjeto);
+  postData("publicarObjeto", nuevoObjeto).then(() => {
     alert("Objeto publicado exitosamente");
-  } catch (error) {
-    console.error("Error al publicar el objeto:", error);
+  }).catch(() => {
     alert("Error al publicar el objeto");
-  }
+  });
 });
