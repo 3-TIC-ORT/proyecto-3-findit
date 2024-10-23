@@ -40,5 +40,17 @@
     "nombre": "asd",
     "apellido": "asd",
     "fecha": "2024-10-17T12:54:42.742Z"
+  },
+  {
+    "idObjeto": 1,
+    "nombre": "gula",
+    "apellido": "guleitor",
+    "fecha": "2024-10-23T13:20:20.577Z"
+  },
+  {
+    "idObjeto": 2,
+    "nombre": "pepo ",
+    "apellido": "gonsa",
+    "fecha": "2024-10-23T13:24:22.091Z"
   }
 ]

@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    padding: 20px;
+    padding: 20px;     
 }
 
 .header {
@@ -163,4 +163,18 @@ button {
     font-size: 18px;
     border-radius: 10px;
     transition: background-color 0.3s;
+}
+
+.Nombre{
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.Apellido{
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #fff;
 }
