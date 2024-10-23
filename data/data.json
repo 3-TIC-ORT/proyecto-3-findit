@@ -7,10 +7,10 @@
     "id": 3
   },
   {
-    "nombre": "mochila",
-    "caracteristicas": "verde, jansport",
-    "lugarEncontrado": "l200",
-    "lugarDejado": "l203",
-    "id": 2
+    "nombre": "guido",
+    "caracteristicas": "es enano",
+    "lugarEncontrado": "en tic",
+    "lugarDejado": "en asistencia",
+    "id": 3
   }
 ]

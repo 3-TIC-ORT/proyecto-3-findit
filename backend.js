@@ -86,7 +86,7 @@ function saveUsers() {
     fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
   } else {
     console.error('Error: users.json no existe. Creando el archivo...');
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2)); // Crea el archivo si no existe
+    fs.writeFileSync('users.json', JSON.stringify(users, null, 2)); 
   }
 }
 
