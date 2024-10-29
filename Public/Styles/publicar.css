@@ -88,6 +88,11 @@ input {
     background-color: #B366FF;
     outline: none;
     text-align: left;
+    margin-top: -8px;
+}
+
+input::placeholder {
+    color: white;
 }
 
 
