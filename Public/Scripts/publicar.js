@@ -19,9 +19,10 @@ document.getElementById("publicar-form").addEventListener("submit", async (event
     }
   };
 
-  postData("publicarObjeto", nuevoObjeto).then(() => {
-    alert("Objeto publicado exitosamente");
-  }).catch(() => {
-    alert("Error al publicar el objeto");
-  });
+  try {
+    await postData("publicarObjeto", nuevoObjeto); 
+    alert("Objeto publicado exitosamente."); 
+  } catch (error) {
+    alert("Error al publicar el objeto."); 
+  }
 });

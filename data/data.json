@@ -40,5 +40,37 @@
     "lugarDejado": "asdasdasd",
     "publicadoPor": "Anónimo",
     "id": 1
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": "Anónimo",
+    "id": 1
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": "Anónimo",
+    "id": 2
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": "Anónimo",
+    "id": 3
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": "Anónimo",
+    "id": 4
   }
 ]
