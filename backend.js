@@ -37,10 +37,7 @@ onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
   nuevoObjeto.id = objetoIdCounter++;
   if (nuevoObjeto.nombrePublicador && nuevoObjeto.apellidoPublicador) {
-    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;
-  } else {
-    nuevoObjeto.publicadoPor = "Anónimo";
-  }
+    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;}
   datos.push(nuevoObjeto);
   escribirDatos(datos);
 });

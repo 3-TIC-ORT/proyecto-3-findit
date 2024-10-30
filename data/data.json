@@ -72,5 +72,35 @@
     "lugarDejado": "asd",
     "publicadoPor": "Anónimo",
     "id": 4
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": "Anónimo",
+    "id": 5
+  },
+  {
+    "nombre": "asd22",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd2",
+    "lugarDejado": "123",
+    "publicadoPor": {
+      "nombre": "maturrreoi",
+      "apellido": "prandi"
+    },
+    "id": 1
+  },
+  {
+    "nombre": "asd22",
+    "caracteristicas": "11",
+    "lugarEncontrado": "oficina",
+    "lugarDejado": "pepo",
+    "publicadoPor": {
+      "nombre": "ignacio",
+      "apellido": "britos"
+    },
+    "id": 2
   }
 ]
