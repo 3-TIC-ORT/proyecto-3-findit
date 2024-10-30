@@ -14,42 +14,6 @@
     "id": 2
   },
   {
-    "nombre": "kask",
-    "caracteristicas": "kask",
-    "lugarEncontrado": "kiask",
-    "lugarDejado": "kask",
-    "nombrePublicador": "kasks",
-    "apellidoPublicador": "asdkaskdk",
-    "id": 1
-  },
-  {
-    "nombre": "asdasdasd",
-    "caracteristicas": "asdasdasd",
-    "lugarEncontrado": "asdasdasd",
-    "lugarDejado": "asdasdasd",
-    "publicadoPor": {
-      "nombre": "asdasdasd",
-      "apellido": "asdasdasd"
-    },
-    "id": 1
-  },
-  {
-    "nombre": "asdasdasdqq",
-    "caracteristicas": "asdasdasd",
-    "lugarEncontrado": "asdasdasd",
-    "lugarDejado": "asdasdasd",
-    "publicadoPor": "Anónimo",
-    "id": 1
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": "Anónimo",
-    "id": 1
-  },
-  {
     "nombre": "asd",
     "caracteristicas": "asd",
     "lugarEncontrado": "asd",
@@ -72,25 +36,6 @@
     "lugarDejado": "asd",
     "publicadoPor": "Anónimo",
     "id": 4
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": "Anónimo",
-    "id": 5
-  },
-  {
-    "nombre": "asd22",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd2",
-    "lugarDejado": "123",
-    "publicadoPor": {
-      "nombre": "maturrreoi",
-      "apellido": "prandi"
-    },
-    "id": 1
   },
   {
     "nombre": "asd22",

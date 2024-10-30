@@ -52,5 +52,17 @@
     "nombre": "pepo ",
     "apellido": "gonsa",
     "fecha": "2024-10-23T13:24:22.091Z"
+  },
+  {
+    "idObjeto": 5,
+    "nombre": "carlos",
+    "apellido": "fernandez",
+    "fecha": "2024-10-30T17:14:25.546Z"
+  },
+  {
+    "idObjeto": 1,
+    "nombre": "maturreoi",
+    "apellido": "prandi",
+    "fecha": "2024-10-30T17:19:34.586Z"
   }
 ]

@@ -37,12 +37,19 @@ function mostrarResultados(objetos) {
         let objetoDiv = document.createElement("div");
         objetoDiv.classList.add("result-box");
 
+        let publicadoPorTexto;
+        if (typeof objeto.publicadoPor === 'object') {
+            publicadoPorTexto = `${objeto.publicadoPor.nombre} ${objeto.publicadoPor.apellido}`;
+        } else {
+            publicadoPorTexto = objeto.publicadoPor;
+        }
+
         objetoDiv.innerHTML = `
             <h2>${objeto.nombre}</h2>
             <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
             <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
             <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
-            <p><strong>Publicado por:</strong> ${objeto.publicadoPor}</p>
+            <p><strong>Publicado por:</strong> ${publicadoPorTexto}</p>
             <button onclick="seleccionarObjeto(${objeto.id})">Seleccionar</button>
         `;
 
