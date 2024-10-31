@@ -1,16 +1,5 @@
 [
   {
-    "nombre": "asd22",
-    "caracteristicas": "11",
-    "lugarEncontrado": "oficina",
-    "lugarDejado": "pepo",
-    "publicadoPor": {
-      "nombre": "ignacio",
-      "apellido": "britos"
-    },
-    "id": 2
-  },
-  {
     "nombre": "asd",
     "caracteristicas": "asd",
     "lugarEncontrado": "asd",
@@ -52,7 +41,7 @@
       "nombre": "asd",
       "apellido": "asd"
     },
-    "id": 5
+    "id": 4
   },
   {
     "nombre": "asd",
@@ -63,6 +52,6 @@
       "nombre": "asd",
       "apellido": "asd"
     },
-    "id": 6
+    "id": 5
   }
 ]

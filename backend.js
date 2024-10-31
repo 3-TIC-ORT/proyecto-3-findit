@@ -2,16 +2,12 @@ import fs from "fs";
 import { onEvent, startServer } from "soquetic";
 
 let datos = "data/data.json";
-let logsFile = "data/logs.json";
-let objetoIdCounter = 1;
+let logs = "data/logs.json";
+let contadorID = 1;
 
 function leerDatos() {
-  if (fs.existsSync(datos)) {
-    let data = fs.readFileSync(datos, "utf8");
-    return JSON.parse(data);
-  } else {
-    return [];
-  }
+  let data = fs.readFileSync(datos, "utf8");
+  return JSON.parse(data);
 }
 
 function escribirDatos(data) {
@@ -19,41 +15,49 @@ function escribirDatos(data) {
 }
 
 function leerLogs() {
-  if (fs.existsSync(logsFile)) {
-    let data = fs.readFileSync(logsFile, "utf8");
+  if (fs.existsSync(logs)) {
+    let data = fs.readFileSync(logs, "utf8");
     return JSON.parse(data);
-  } else {
-    return [];
   }
+  return [];
 }
 
-function escribirLogs(logs) {
-  fs.writeFileSync(logsFile, JSON.stringify(logs, null, 2));
+function escribirLogs(logsData) {
+  fs.writeFileSync(logs, JSON.stringify(logsData, null, 2)); // Asegúrate de que logsData es un array o un objeto válido
 }
 
 onEvent("obtenerObjetos", () => leerDatos());
 
 onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
-  nuevoObjeto.id = objetoIdCounter++;
+  nuevoObjeto.id = contadorID++;
   if (nuevoObjeto.nombrePublicador && nuevoObjeto.apellidoPublicador) {
-    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;}
+    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;
+  }
   datos.push(nuevoObjeto);
   escribirDatos(datos);
 });
+
+function verificarDatos(datos, nuevosDatos) {
+  if (datos.length !== nuevosDatos.length) {
+    return { success: true, message: "Objeto reclamado exitosamente." };
+  } else {
+    return { success: false, message: "Objeto no encontrado." };
+  }
+}
 
 function reclamarObjeto(idObjeto, nombre, apellido) {
   let datos = leerDatos();
   let nuevosDatos = datos.filter(objeto => objeto.id !== idObjeto);
   escribirDatos(nuevosDatos);
 
-  let logs = leerLogs();
-  logs.push({ idObjeto, nombre, apellido, fecha: new Date().toISOString() });
-  escribirLogs(logs);
+  let logsData = leerLogs(); // Cambié 'let logs' a 'let logsData'
+  let fechaArgentina = new Date(new Date().getTime() - (3 * 60 * 60 * 1000)).toISOString();
+  logsData.push({ idObjeto, nombre, apellido, fecha: fechaArgentina });
+  
+  escribirLogs(logsData); // Asegúrate de que logsData es un array válido
 
-  return datos.length !== nuevosDatos.length 
-    ? { success: true, message: "Objeto reclamado exitosamente." } 
-    : { success: false, message: "Objeto no encontrado." };
+  return verificarDatos(datos, nuevosDatos);
 }
 
 onEvent("reclamarObjeto", (data) => {
@@ -84,12 +88,7 @@ function loadUsers() {
 }
 
 function saveUsers() {
-  if (fs.existsSync('users.json')) {
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
-  } else {
-    console.error('Error: users.json no existe. Creando el archivo...');
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2)); 
-  }
+  fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
 }
 
 function isValidUsername(username) {
