@@ -1,43 +1,5 @@
 [
   {
-    "nombre": "Auriculares",
-    "caracteristicas": "Blancos",
-    "lugarEncontrado": "L2",
-    "lugarDejado": "Oficina TIC",
-    "id": 3
-  },
-  {
-    "nombre": "mochila",
-    "caracteristicas": "verde, jansport",
-    "lugarEncontrado": "l200",
-    "lugarDejado": "l203",
-    "id": 2
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": "Anónimo",
-    "id": 2
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": "Anónimo",
-    "id": 3
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": "Anónimo",
-    "id": 4
-  },
-  {
     "nombre": "asd22",
     "caracteristicas": "11",
     "lugarEncontrado": "oficina",
@@ -47,5 +9,60 @@
       "apellido": "britos"
     },
     "id": 2
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": {
+      "nombre": "asd",
+      "apellido": "asd"
+    },
+    "id": 1
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": {
+      "nombre": "asd",
+      "apellido": "asd"
+    },
+    "id": 2
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": {
+      "nombre": "asd",
+      "apellido": "asd"
+    },
+    "id": 3
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": {
+      "nombre": "asd",
+      "apellido": "asd"
+    },
+    "id": 5
+  },
+  {
+    "nombre": "asd",
+    "caracteristicas": "asd",
+    "lugarEncontrado": "asd",
+    "lugarDejado": "asd",
+    "publicadoPor": {
+      "nombre": "asd",
+      "apellido": "asd"
+    },
+    "id": 6
   }
 ]
