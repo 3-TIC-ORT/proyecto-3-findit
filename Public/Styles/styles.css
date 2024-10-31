@@ -16,7 +16,13 @@ header {
     backdrop-filter: blur(6px);
 }
 
-.cuentas{
+.cuentas1{
+    position: relative;
+    flex-direction: row;
+    left: 35rem;
+}
+
+.cuentas2{
     position: relative;
     flex-direction: row;
     left: 35rem;
@@ -107,4 +113,67 @@ video {
     object-fit: cover; 
     background-size: cover;
     background-position: center;
-  }
+}
+
+.quienes{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: -20px;
+}
+
+.quienes:hover {
+    background-color:#c299ff; 
+}
+
+.porque{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: -20px;
+}
+
+.porque:hover{
+    background-color:#c299ff;
+}
+
+.como{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.como:hover{
+    background-color: #c299ff;
+}
+
+.cuentas1{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: -20px;
+}
+
+.cuentas1:hover{
+    background-color:#c299ff;
+}
+
+.cuentas2{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cuentas2:hover{
+    background-color:#c299ff;
+}
