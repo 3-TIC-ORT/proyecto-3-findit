@@ -128,11 +128,16 @@ onEvent('login', (data) => {
 });
 
 onEvent('checkSession', (data) => {
+
   let { username } = data;
   let user = users.find(user => user.username === username);
   return user
     ? { success: true, message: 'Sesión válida', username: user.username }
     : { success: false, message: 'Sesión inválida' };
+});
+
+onEvent('logout', (data) => {
+  return { success: true, message: 'Logout exitoso' };
 });
 
 loadUsers();

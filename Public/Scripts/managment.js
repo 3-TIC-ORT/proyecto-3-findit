@@ -3,27 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginLink = document.querySelector('.cuentas1');
     const registerLink = document.querySelector('.cuentas2');
     
-    function crearLogoutButton() {
-        const logoutButton = document.crearElement('button');
+    function createLogoutButton() {
+        const logoutButton = document.createElement('button');
         logoutButton.textContent = 'Cerrar sesión';
         logoutButton.className = 'logout-btn';
-        logoutButton.addEventListener('click', () => {
+        logoutButton.addEventListener('click', handleLogout);
+        return logoutButton;
+    }
+
+    function handleLogout() {
+        postData('logout', { username: localStorage.getItem('username') }, (response) => {
             localStorage.removeItem('username');
             window.location.reload();
         });
-        return logoutButton;
     }
 
     function checkSession() {
         const username = localStorage.getItem('username');
         if (username) {
-            fetchData('checkSession', { username }, (response) => {
+            postData('checkSession', { username }, (response) => {
                 if (response.success) {
                     if (loginLink) loginLink.style.display = 'none';
                     if (registerLink) registerLink.style.display = 'none';
-                
                     if (!document.querySelector('.logout-btn')) {
-                        nav.appendChild(crearLogoutButton());
+                        nav.appendChild(createLogoutButton());
                     }
                 } else {
                     localStorage.removeItem('username');
