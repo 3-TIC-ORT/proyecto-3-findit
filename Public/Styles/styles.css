@@ -177,18 +177,18 @@ video {
 .cuentas2:hover{
     background-color:#c299ff;
 }
+
 .logout-btn {
-    background-color: #af80ff;
-    color: white;
+    background-color: transparent;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
     position: relative;
     margin-right: 20rem;
     left: 38rem;
+    color: white;
+    font-size: 14px;
 }
 
 

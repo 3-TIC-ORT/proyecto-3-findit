@@ -137,6 +137,7 @@ main {
     flex-direction: column;
     gap: 8px;
     width: 90%;
+    color: white;
 }
 
 #loginForm button {
@@ -162,6 +163,7 @@ main {
     border-radius: 8px;
     background-color: transparent;
     border: 2px solid #fff;
+    color: white;
 }
 
 a {
