@@ -23,7 +23,7 @@ function leerLogs() {
 }
 
 function escribirLogs(logsData) {
-  fs.writeFileSync(logs, JSON.stringify(logsData, null, 2)); // Asegúrate de que logsData es un array o un objeto válido
+  fs.writeFileSync(logs, JSON.stringify(logsData, null, 2)); 
 }
 
 onEvent("obtenerObjetos", () => leerDatos());

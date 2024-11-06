@@ -66,5 +66,17 @@
   {
     "username": "chino",
     "password": "chino123"
+  },
+  {
+    "username": "guido123",
+    "password": "123guido"
+  },
+  {
+    "username": "guido1232",
+    "password": "123guido"
+  },
+  {
+    "username": "admin",
+    "password": "admin123"
   }
 ]

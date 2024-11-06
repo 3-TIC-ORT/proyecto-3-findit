@@ -33,6 +33,17 @@
     "id": 4
   },
   {
+    "nombre": "Mochila",
+    "caracteristicas": "Roja",
+    "lugarEncontrado": "L203",
+    "lugarDejado": "Asistencia 2do piso",
+    "publicadoPor": {
+      "nombre": "Guido",
+      "apellido": "Jacofsky"
+    },
+    "id": 5
+  },
+  {
     "nombre": "asd",
     "caracteristicas": "asd",
     "lugarEncontrado": "asd",
@@ -41,6 +52,6 @@
       "nombre": "asd",
       "apellido": "asd"
     },
-    "id": 5
+    "id": 1
   }
 ]
