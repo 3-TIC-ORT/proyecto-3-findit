@@ -31,9 +31,7 @@ onEvent("obtenerObjetos", () => leerDatos());
 onEvent("publicarObjeto", (nuevoObjeto) => {
   let datos = leerDatos();
   nuevoObjeto.id = contadorID++;
-  if (nuevoObjeto.nombrePublicador && nuevoObjeto.apellidoPublicador) {
-    nuevoObjeto.publicadoPor = `${nuevoObjeto.nombrePublicador} ${nuevoObjeto.apellidoPublicador}`;
-  }
+  nuevoObjeto.publicadoPor = { nombre: nuevoObjeto.publicadoPor.nombre };
   datos.push(nuevoObjeto);
   escribirDatos(datos);
 });
@@ -51,11 +49,11 @@ function reclamarObjeto(idObjeto, nombre, apellido) {
   let nuevosDatos = datos.filter(objeto => objeto.id !== idObjeto);
   escribirDatos(nuevosDatos);
 
-  let logsData = leerLogs(); // Cambié 'let logs' a 'let logsData'
+  let logsData = leerLogs();
   let fechaArgentina = new Date(new Date().getTime() - (3 * 60 * 60 * 1000)).toISOString();
   logsData.push({ idObjeto, nombre, apellido, fecha: fechaArgentina });
   
-  escribirLogs(logsData); // Asegúrate de que logsData es un array válido
+  escribirLogs(logsData);
 
   return verificarDatos(datos, nuevosDatos);
 }
@@ -63,6 +61,19 @@ function reclamarObjeto(idObjeto, nombre, apellido) {
 onEvent("reclamarObjeto", (data) => {
   let { id, nombre, apellido } = data;
   return reclamarObjeto(id, nombre, apellido);
+});
+
+onEvent("editarObjeto", (objetoEditado) => {
+  let datos = leerDatos();
+  let indice = datos.findIndex(obj => obj.id === objetoEditado.id);
+  
+  if (indice !== -1) {
+    datos[indice] = { ...datos[indice], ...objetoEditado };
+    escribirDatos(datos);
+    return { success: true };
+  } else {
+    return { success: false, message: "Objeto no encontrado" };
+  }
 });
 
 onEvent("buscarObjeto", (input) => {
@@ -128,7 +139,6 @@ onEvent('login', (data) => {
 });
 
 onEvent('checkSession', (data) => {
-
   let { username } = data;
   let user = users.find(user => user.username === username);
   return user

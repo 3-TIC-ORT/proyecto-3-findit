@@ -1,57 +1,42 @@
 [
   {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
+    "nombre": "mochila",
+    "caracteristicas": "azul",
+    "lugarEncontrado": "L201",
+    "lugarDejado": "L200",
     "publicadoPor": {
-      "nombre": "asd",
-      "apellido": "asd"
+      "nombre": "guido11"
+    },
+    "id": 1
+  },
+  {
+    "nombre": "Billetera",
+    "caracteristicas": "Roja",
+    "lugarEncontrado": "L3",
+    "lugarDejado": "L4",
+    "publicadoPor": {
+      "nombre": "guido11"
     },
     "id": 2
   },
   {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
+    "nombre": "Cartuchera",
+    "caracteristicas": "Violeta",
+    "lugarEncontrado": "Oficina Medios",
+    "lugarDejado": "Oficina TIC",
     "publicadoPor": {
-      "nombre": "asd",
-      "apellido": "asd"
+      "nombre": "guido11"
     },
     "id": 3
   },
   {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
+    "nombre": "mochila",
+    "caracteristicas": "negra de VANS",
+    "lugarEncontrado": "medios",
+    "lugarDejado": "tic",
     "publicadoPor": {
-      "nombre": "asd",
-      "apellido": "asd"
+      "nombre": "etbil"
     },
     "id": 4
-  },
-  {
-    "nombre": "Mochila",
-    "caracteristicas": "Roja",
-    "lugarEncontrado": "L203",
-    "lugarDejado": "Asistencia 2do piso",
-    "publicadoPor": {
-      "nombre": "Guido",
-      "apellido": "Jacofsky"
-    },
-    "id": 5
-  },
-  {
-    "nombre": "asd",
-    "caracteristicas": "asd",
-    "lugarEncontrado": "asd",
-    "lugarDejado": "asd",
-    "publicadoPor": {
-      "nombre": "asd",
-      "apellido": "asd"
-    },
-    "id": 1
   }
 ]

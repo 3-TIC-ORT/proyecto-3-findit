@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busqueda de objetos</title>
     <link rel="stylesheet" href="/Public/Styles/buscar.css">
+    <style>
+        #edicion-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #edicion-menu {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #cerrar-edicion {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        #edicion-menu input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #guardar-cambios {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <video src="videoplayback.mp4" autoplay="true" muted="true" loop="true"></video>
@@ -21,6 +72,18 @@
             <input type="text" id="reclamo-nombre" placeholder="Nombre" class="Nombre">
             <input type="text" id="reclamo-apellido" placeholder="Apellido" class="Apellido">
             <button id="reclamar-button">Reclamar Objeto</button>
+        </div>
+
+        <div id="edicion-overlay">
+            <div id="edicion-menu">
+                <span id="cerrar-edicion">&times;</span>
+                <h2>Editar Objeto</h2>
+                <input type="text" id="edicion-nombre" placeholder="Nombre del objeto">
+                <input type="text" id="edicion-caracteristicas" placeholder="Características">
+                <input type="text" id="edicion-lugar-encontrado" placeholder="Lugar encontrado">
+                <input type="text" id="edicion-lugar-dejado" placeholder="Lugar dejado">
+                <button id="guardar-cambios">Guardar Cambios</button>
+            </div>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
