@@ -38,5 +38,15 @@
       "nombre": "etbil"
     },
     "id": 4
+  },
+  {
+    "nombre": "tio tranquilo",
+    "caracteristicas": "esta chill de cojones",
+    "lugarEncontrado": "L200",
+    "lugarDejado": "L203",
+    "publicadoPor": {
+      "nombre": "etbil"
+    },
+    "id": 1
   }
 ]
