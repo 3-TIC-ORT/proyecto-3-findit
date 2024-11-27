@@ -61,6 +61,7 @@ function mostrarResultados(objetos) {
             <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
             <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
             <p><strong>Publicado por:</strong> ${publicadoPorTexto}</p>
+            ${objeto.imagen ? `<img src="${objeto.imagen}" alt="Imagen del objeto" style="max-width: 100%; height: auto;">` : ""}
             <button onclick="seleccionarObjeto(${objeto.id})">Seleccionar</button>
             ${botonesEdicion}
         `;

@@ -36,6 +36,34 @@ onEvent("publicarObjeto", (nuevoObjeto) => {
   escribirDatos(datos);
 });
 
+const imagenesPath = "public/images/";
+if (!fs.existsSync(imagenesPath)) {
+  fs.mkdirSync(imagenesPath, { recursive: true });
+}
+
+onEvent("publicarObjeto", (nuevoObjeto) => {
+  const { archivoBase64, ...datosObjeto } = nuevoObjeto;
+  let datos = leerDatos();
+
+  datosObjeto.id = contadorID++;
+
+  if (datosObjeto.nombrePublicador && datosObjeto.apellidoPublicador) {
+    datosObjeto.publicadoPor = `${datosObjeto.nombrePublicador} ${datosObjeto.apellidoPublicador}`;
+  }
+
+  if (archivoBase64) {
+    const nombreArchivo = `objeto_${datosObjeto.id}.png`;
+    const rutaArchivo = path.join(imagenesPath, nombreArchivo);
+    const buffer = Buffer.from(archivoBase64, "base64");
+    fs.writeFileSync(rutaArchivo, buffer);
+    datosObjeto.imagen = `/images/${nombreArchivo}`;
+  }
+
+  datos.push(datosObjeto);
+  escribirDatos(datos);
+});
+
+
 function verificarDatos(datos, nuevosDatos) {
   if (datos.length !== nuevosDatos.length) {
     return { success: true, message: "Objeto reclamado exitosamente." };
