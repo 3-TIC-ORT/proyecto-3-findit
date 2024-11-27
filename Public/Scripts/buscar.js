@@ -9,6 +9,7 @@ let username = localStorage.getItem('username');
 let edicionOverlay = document.getElementById("edicion-overlay");
 let cerrarEdicion = document.getElementById("cerrar-edicion");
 let guardarCambios = document.getElementById("guardar-cambios");
+let eliminarObjeto = document.getElementById("eliminar-objeto");
 let edicionNombre = document.getElementById("edicion-nombre");
 let edicionCaracteristicas = document.getElementById("edicion-caracteristicas");
 let edicionLugarEncontrado = document.getElementById("edicion-lugar-encontrado");
@@ -119,6 +120,23 @@ guardarCambios.addEventListener("click", () => {
             alert("Error al editar el objeto");
         }
     });
+});
+
+eliminarObjeto.addEventListener("click", () => {
+    if (objetoSeleccionado && username) {
+        postData("eliminarObjeto", { 
+            id: objetoSeleccionado.id, 
+            username: username 
+        }, (response) => {
+            if (response.success) {
+                alert("Objeto eliminado exitosamente");
+                edicionOverlay.style.display = "none";
+                buscar();
+            } else {
+                alert(response.message || "Error al eliminar el objeto");
+            }
+        });
+    }
 });
 
 button.addEventListener("click", buscar);

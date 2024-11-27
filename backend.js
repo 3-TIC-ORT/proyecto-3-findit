@@ -63,7 +63,6 @@ onEvent("publicarObjeto", (nuevoObjeto) => {
   escribirDatos(datos);
 });
 
-
 function verificarDatos(datos, nuevosDatos) {
   if (datos.length !== nuevosDatos.length) {
     return { success: true, message: "Objeto reclamado exitosamente." };
@@ -115,6 +114,37 @@ onEvent("buscarObjeto", (input) => {
   return objetosEncontrados;
 });
 
+onEvent('eliminarObjeto', (data) => {
+  const { id, username } = data;
+  let datos = leerDatos();
+  
+  // Encuentra el objeto específico por su ID y verifica el nombre del publicador
+  const objetoAEliminar = datos.find(obj => obj.id === id && obj.publicadoPor.nombre === username);
+  
+  if (objetoAEliminar) {
+    // Filtra solo el objeto específico con ese ID
+    datos = datos.filter(obj => obj.id !== id);
+    
+    escribirDatos(datos);
+    
+    let logsData = leerLogs();
+    let fechaArgentina = new Date(new Date().getTime() - (3 * 60 * 60 * 1000)).toISOString();
+    logsData.push({ 
+      idObjeto: id, 
+      accion: 'eliminado', 
+      usuario: username, 
+      fecha: fechaArgentina 
+    });
+    escribirLogs(logsData);
+    
+    return { success: true, message: 'Objeto eliminado exitosamente' };
+  } else {
+    return { 
+      success: false, 
+      message: 'No tiene permisos para eliminar este objeto o el objeto no existe' 
+    };
+  }
+});
 let users = [];
 
 function loadUsers() {
@@ -176,74 +206,6 @@ onEvent('checkSession', (data) => {
 
 onEvent('logout', (data) => {
   return { success: true, message: 'Logout exitoso' };
-});
-
-let solicitudesReclamacion = {};
-
-onEvent('solicitarReclamacion', (data) => {
-  const { publicador, solicitante, objetoId, datosObjeto } = data;
-  
-  if (!solicitudesReclamacion[publicador]) {
-    solicitudesReclamacion[publicador] = [];
-  }
-  
-  const solicitudExistente = solicitudesReclamacion[publicador]
-    .find(s => s.objetoId === objetoId);
-
-  if (solicitudExistente) {
-    return { 
-      success: false, 
-      message: 'Ya existe una solicitud para este objeto' 
-    };
-  }
-
-  const nuevaSolicitud = {
-    solicitante,
-    objetoId,
-    datosObjeto,
-    estado: 'pendiente',
-    fecha: new Date().toISOString()
-  };
-
-  solicitudesReclamacion[publicador].push(nuevaSolicitud);
-
-  return { 
-    success: true, 
-    message: 'Solicitud de reclamación enviada' 
-  };
-});
-
-onEvent('responderSolicitudReclamacion', (data) => {
-  const { publicador, objetoId, aceptar } = data;
-  
-  if (solicitudesReclamacion[publicador]) {
-    const indexSolicitud = solicitudesReclamacion[publicador]
-      .findIndex(s => s.objetoId === objetoId);
-    
-    if (indexSolicitud !== -1) {
-      const solicitud = solicitudesReclamacion[publicador][indexSolicitud];
-      solicitud.estado = aceptar ? 'aceptada' : 'rechazada';
-      
-      if (aceptar) {
-        let datos = leerDatos();
-        datos = datos.filter(obj => obj.id !== objetoId);
-        escribirDatos(datos);
-      }
-
-      return { 
-        success: true, 
-        estado: solicitud.estado,
-        solicitante: solicitud.solicitante
-      };
-    }
-  }
-  
-  return { success: false, message: 'Solicitud no encontrada' };
-});
-
-onEvent('obtenerSolicitudesReclamacion', (data) => {
-  const { username } = data;
-  return solicitudesReclamacion[username] || [];
 });
 
 loadUsers();

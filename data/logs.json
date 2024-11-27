@@ -124,5 +124,17 @@
     "nombre": "test",
     "apellido": "test",
     "fecha": "2024-11-12T15:01:46.584Z"
+  },
+  {
+    "idObjeto": 1,
+    "accion": "eliminado",
+    "usuario": "guido11",
+    "fecha": "2024-11-27T19:33:54.536Z"
+  },
+  {
+    "idObjeto": 1,
+    "accion": "eliminado",
+    "usuario": "guido11",
+    "fecha": "2024-11-27T19:35:57.338Z"
   }
 ]

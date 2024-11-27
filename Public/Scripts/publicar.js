@@ -30,7 +30,7 @@ document.getElementById("publicar-form").addEventListener("submit", async (event
   event.preventDefault();
 
   const formData = new FormData(event.target);
-  const archivo = formData.get("foto");
+  const archivo = event.target.files[0];
   const base64Promise = new Promise((resolve) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result.split(",")[1]);

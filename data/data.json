@@ -1,15 +1,5 @@
 [
   {
-    "nombre": "mochila",
-    "caracteristicas": "azul",
-    "lugarEncontrado": "L2022",
-    "lugarDejado": "L200",
-    "publicadoPor": {
-      "nombre": "guido11"
-    },
-    "id": 1
-  },
-  {
     "nombre": "Billetera",
     "caracteristicas": "Roja",
     "lugarEncontrado": "L3",
@@ -40,23 +30,13 @@
     "id": 4
   },
   {
-    "nombre": "tio tranquilo",
-    "caracteristicas": "esta chill de cojones",
-    "lugarEncontrado": "L200",
-    "lugarDejado": "L203",
-    "publicadoPor": {
-      "nombre": "etbil"
-    },
-    "id": 1
-  },
-  {
     "nombre": "mochila",
-    "caracteristicas": "roja",
-    "lugarEncontrado": "chill",
-    "lugarDejado": "trnquilo",
+    "caracteristicas": "mochila5",
+    "lugarEncontrado": "mochila2",
+    "lugarDejado": "mochila02",
     "publicadoPor": {
       "nombre": "guido11"
     },
-    "id": 1
+    "id": 2
   }
 ]
