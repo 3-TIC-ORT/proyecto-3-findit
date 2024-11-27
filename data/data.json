@@ -2,7 +2,7 @@
   {
     "nombre": "mochila",
     "caracteristicas": "azul",
-    "lugarEncontrado": "L201",
+    "lugarEncontrado": "L2022",
     "lugarDejado": "L200",
     "publicadoPor": {
       "nombre": "guido11"
@@ -48,5 +48,15 @@
       "nombre": "etbil"
     },
     "id": 1
+  },
+  {
+    "nombre": "mochila",
+    "caracteristicas": "roja",
+    "lugarEncontrado": "chill",
+    "lugarDejado": "trnquilo",
+    "publicadoPor": {
+      "nombre": "guido11"
+    },
+    "id": 1
   }
-] 
+]

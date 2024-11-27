@@ -41,34 +41,45 @@ function reclamarObjeto() {
 function mostrarResultados(objetos) {
     let resultadosDiv = document.getElementById("resultados");
     resultadosDiv.innerHTML = "";
-
+  
     objetos.forEach(objeto => {
-        let objetoDiv = document.createElement("div");
-        objetoDiv.classList.add("result-box");
-
-        let publicadoPorTexto = objeto.publicadoPor.nombre;
-        let botonesEdicion = '';
-
-        if (username === publicadoPorTexto) {
-            botonesEdicion = `
-                <button onclick="editarObjeto(${objeto.id}, '${objeto.nombre}', '${objeto.caracteristicas}', '${objeto.lugarEncontrado}', '${objeto.lugarDejado}')">Editar</button>
-            `;
-        }
-
-        objetoDiv.innerHTML = `
-            <h2>${objeto.nombre}</h2>
-            <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
-            <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
-            <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
-            <p><strong>Publicado por:</strong> ${publicadoPorTexto}</p>
-            ${objeto.imagen ? `<img src="${objeto.imagen}" alt="Imagen del objeto" style="max-width: 100%; height: auto;">` : ""}
-            <button onclick="seleccionarObjeto(${objeto.id})">Seleccionar</button>
-            ${botonesEdicion}
+      let objetoDiv = document.createElement("div");
+      objetoDiv.classList.add("result-box");
+  
+      let publicadoPorTexto = objeto.publicadoPor.nombre;
+      let botonesEdicion = '';
+      let botonReclamar = '';
+  
+      if (username !== publicadoPorTexto) {
+        botonReclamar = `
+          <button onclick="enviarSolicitudReclamacion(${JSON.stringify(objeto).replace(/"/g, '&quot;')})">
+            Reclamar
+          </button>
         `;
-
-        resultadosDiv.appendChild(objetoDiv);
+      }
+  
+      if (username === publicadoPorTexto) {
+        botonesEdicion = `
+          <button onclick="editarObjeto(${objeto.id}, '${objeto.nombre}', '${objeto.caracteristicas}', '${objeto.lugarEncontrado}', '${objeto.lugarDejado}')">
+            Editar
+          </button>
+        `;
+      }
+  
+      objetoDiv.innerHTML = `
+        <h2>${objeto.nombre}</h2>
+        <p><strong>Características:</strong> ${objeto.caracteristicas}</p>
+        <p><strong>Lugar Encontrado:</strong> ${objeto.lugarEncontrado}</p>
+        <p><strong>Lugar Dejado:</strong> ${objeto.lugarDejado}</p>
+        <p><strong>Publicado por:</strong> ${publicadoPorTexto}</p>
+        ${objeto.imagen ? `<img src="${objeto.imagen}" alt="Imagen del objeto" style="max-width: 100%; height: auto;">` : ""}
+        ${botonReclamar}
+        ${botonesEdicion}
+      `;
+  
+      resultadosDiv.appendChild(objetoDiv);
     });
-}
+  }
 
 function seleccionarObjeto(id) {
     objetoSeleccionado = { id };
