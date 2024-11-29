@@ -51,13 +51,6 @@ function mostrarResultados(objetos) {
       let botonesEdicion = '';
       let botonReclamar = '';
   
-      if (username !== publicadoPorTexto) {
-        botonReclamar = `
-          <button onclick="enviarSolicitudReclamacion(${JSON.stringify(objeto).replace(/"/g, '&quot;')})">
-            Reclamar
-          </button>
-        `;
-      }
   
       if (username === publicadoPorTexto) {
         botonesEdicion = `

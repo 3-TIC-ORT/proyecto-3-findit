@@ -136,5 +136,17 @@
     "accion": "eliminado",
     "usuario": "guido11",
     "fecha": "2024-11-27T19:35:57.338Z"
+  },
+  {
+    "idObjeto": 1,
+    "accion": "eliminado",
+    "usuario": "andres3",
+    "fecha": "2024-11-28T19:40:10.029Z"
+  },
+  {
+    "idObjeto": 1,
+    "accion": "eliminado",
+    "usuario": "bauti",
+    "fecha": "2024-11-28T22:33:23.897Z"
   }
 ]

@@ -118,11 +118,9 @@ onEvent('eliminarObjeto', (data) => {
   const { id, username } = data;
   let datos = leerDatos();
   
-  // Encuentra el objeto específico por su ID y verifica el nombre del publicador
   const objetoAEliminar = datos.find(obj => obj.id === id && obj.publicadoPor.nombre === username);
   
   if (objetoAEliminar) {
-    // Filtra solo el objeto específico con ese ID
     datos = datos.filter(obj => obj.id !== id);
     
     escribirDatos(datos);
